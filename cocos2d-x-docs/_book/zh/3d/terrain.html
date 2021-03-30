@@ -1,0 +1,1715 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>地形(Terrain) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-title/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tools.html" />
+    
+    
+    <link rel="prev" href="lighting.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+    <nav role="navigation" class="autoshow">
+        <ul class="summary">
+        <li><a href="https://cocos2d-x.org" class="btn" target="_blank"><img src="//forum.cocos.com/images/logo.png" height="30" /></a></li>
+        <li><a href="#" class="btn" onclick="toggleLanguage()">English</a></li>
+        
+        
+        <li>
+            <a href="#" class="btn"><i class="fa fa-book"></i>Cocos Creator</a>
+            <ul>
+                
+                <li><a href="https://docs.cocos2d-x.org/creator/zh/" class="btn">手册文档</a></li>
+                
+                <li><a href="https://docs.cocos2d-x.org/creator-api/zh/" class="btn">API 参考</a></li>
+                
+            </ul>
+        </li>                
+        
+    
+        
+        <li>
+            <a href="#" class="btn"><i class="fa fa-book"></i>Cocos2d-x</a>
+            <ul>
+                
+                <li><a href="https://docs.cocos2d-x.org/cocos2d-x/zh/" class="btn">手册文档</a></li>
+                
+                <li><a href="https://docs.cocos2d-x.org/api-ref/index.html" class="btn">API 参考</a></li>
+                
+            </ul>
+        </li>                
+        
+          
+        </ul>
+    </nav>
+    
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">新手入门</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    了解引擎
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../about/">
+            
+                <a href="../about/">
+            
+                    
+                    引擎优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../about/learn.html">
+            
+                <a href="../about/learn.html">
+            
+                    
+                    学习资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../about/help.html">
+            
+                <a href="../about/help.html">
+            
+                    
+                    获取帮助
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../about/how.html">
+            
+                <a href="../about/how.html">
+            
+                    
+                    参与开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic_concepts/">
+            
+                <a href="../basic_concepts/">
+            
+                    
+                    基本概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basic_concepts/director.html">
+            
+                <a href="../basic_concepts/director.html">
+            
+                    
+                    导演(Director)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic_concepts/scene.html">
+            
+                <a href="../basic_concepts/scene.html">
+            
+                    
+                    场景(Scene)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../basic_concepts/sprites.html">
+            
+                <a href="../basic_concepts/sprites.html">
+            
+                    
+                    精灵(Sprite)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../basic_concepts/actions.html">
+            
+                <a href="../basic_concepts/actions.html">
+            
+                    
+                    动作(Action)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../basic_concepts/sequences.html">
+            
+                <a href="../basic_concepts/sequences.html">
+            
+                    
+                    序列(Sequence)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../basic_concepts/parent_child.html">
+            
+                <a href="../basic_concepts/parent_child.html">
+            
+                    
+                    节点关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../basic_concepts/logging.html">
+            
+                <a href="../basic_concepts/logging.html">
+            
+                    
+                    日志输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">基本功能</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../sprites/">
+            
+                <a href="../sprites/">
+            
+                    
+                    精灵(Sprite)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../sprites/creating.html">
+            
+                <a href="../sprites/creating.html">
+            
+                    
+                    精灵创建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.1" data-path="../sprites/spritesheets.html">
+            
+                <a href="../sprites/spritesheets.html">
+            
+                    
+                    使用图集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.2" data-path="../sprites/spriteframe_cache.html">
+            
+                <a href="../sprites/spriteframe_cache.html">
+            
+                    
+                    使用精灵缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../sprites/manipulation.html">
+            
+                <a href="../sprites/manipulation.html">
+            
+                    
+                    精灵控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../sprites/polygon.html">
+            
+                <a href="../sprites/polygon.html">
+            
+                    
+                    多边形精灵
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../actions/">
+            
+                <a href="../actions/">
+            
+                    
+                    动作(Action)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../actions/basic.html">
+            
+                <a href="../actions/basic.html">
+            
+                    
+                    基本动作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../actions/sequences.html">
+            
+                <a href="../actions/sequences.html">
+            
+                    
+                    动作序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../actions/sequence_internals.html">
+            
+                <a href="../actions/sequence_internals.html">
+            
+                    
+                    动作的克隆和倒转
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../scenes/">
+            
+                <a href="../scenes/">
+            
+                    
+                    场景(Scene)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../scenes/creating.html">
+            
+                <a href="../scenes/creating.html">
+            
+                    
+                    场景创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../scenes/transitioning.html">
+            
+                <a href="../scenes/transitioning.html">
+            
+                    
+                    场景切换
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../ui_components/">
+            
+                <a href="../ui_components/">
+            
+                    
+                    UI 组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../ui_components/labels.html">
+            
+                <a href="../ui_components/labels.html">
+            
+                    
+                    标签(Label)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../ui_components/menus.html">
+            
+                <a href="../ui_components/menus.html">
+            
+                    
+                    菜单(Menu)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../ui_components/buttons.html">
+            
+                <a href="../ui_components/buttons.html">
+            
+                    
+                    按钮(Button)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../ui_components/checkboxes.html">
+            
+                <a href="../ui_components/checkboxes.html">
+            
+                    
+                    复选框(CheckBox)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../ui_components/loading_bar.html">
+            
+                <a href="../ui_components/loading_bar.html">
+            
+                    
+                    进度条(LoadingBar)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../ui_components/sliders.html">
+            
+                <a href="../ui_components/sliders.html">
+            
+                    
+                    滑动条(Slider)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../ui_components/textfields.html">
+            
+                <a href="../ui_components/textfields.html">
+            
+                    
+                    文本框(TextField)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">进阶内容</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../other_node_types/">
+            
+                <a href="../other_node_types/">
+            
+                    
+                    特殊节点对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../other_node_types/tilemap.html">
+            
+                <a href="../other_node_types/tilemap.html">
+            
+                    
+                    瓦片地图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../other_node_types/particles.html">
+            
+                <a href="../other_node_types/particles.html">
+            
+                    
+                    粒子系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../other_node_types/parallax.html">
+            
+                <a href="../other_node_types/parallax.html">
+            
+                    
+                    视差滚动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../event_dispatcher/">
+            
+                <a href="../event_dispatcher/">
+            
+                    
+                    事件分发机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../event_dispatcher/types.html">
+            
+                <a href="../event_dispatcher/types.html">
+            
+                    
+                    监听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../event_dispatcher/priority.html">
+            
+                <a href="../event_dispatcher/priority.html">
+            
+                    
+                    优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../event_dispatcher/touch.html">
+            
+                <a href="../event_dispatcher/touch.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../event_dispatcher/keyboard.html">
+            
+                <a href="../event_dispatcher/keyboard.html">
+            
+                    
+                    键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../event_dispatcher/accelerometer.html">
+            
+                <a href="../event_dispatcher/accelerometer.html">
+            
+                    
+                    加速度传感器事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="../event_dispatcher/mouse.html">
+            
+                <a href="../event_dispatcher/mouse.html">
+            
+                    
+                    鼠标事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.7" data-path="../event_dispatcher/custom.html">
+            
+                <a href="../event_dispatcher/custom.html">
+            
+                    
+                    自定义事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.8" data-path="../event_dispatcher/registering.html">
+            
+                <a href="../event_dispatcher/registering.html">
+            
+                    
+                    进阶话题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    3D 支持
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="sprite3d.html">
+            
+                <a href="sprite3d.html">
+            
+                    
+                    3D 精灵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="animation.html">
+            
+                <a href="animation.html">
+            
+                    
+                    3D 动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    相机(Camera)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="cubemap.html">
+            
+                <a href="cubemap.html">
+            
+                    
+                    立方体纹理(TextureCube)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="skybox.html">
+            
+                <a href="skybox.html">
+            
+                    
+                    天空盒(Skybox)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="lighting.html">
+            
+                <a href="lighting.html">
+            
+                    
+                    光照(Light)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3.7" data-path="terrain.html">
+            
+                <a href="terrain.html">
+            
+                    
+                    地形(Terrain)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.8" data-path="tools.html">
+            
+                <a href="tools.html">
+            
+                    
+                    常用工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.9" data-path="advanced.html">
+            
+                <a href="advanced.html">
+            
+                    
+                    进阶话题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../scripting/">
+            
+                <a href="../scripting/">
+            
+                    
+                    使用脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../scripting/">
+            
+                <a href="../scripting/">
+            
+                    
+                    脚本组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../physics/">
+            
+                <a href="../physics/">
+            
+                    
+                    物理引擎
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../physics/concepts.html">
+            
+                <a href="../physics/concepts.html">
+            
+                    
+                    概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../physics/collisions.html">
+            
+                <a href="../physics/collisions.html">
+            
+                    
+                    碰撞
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../physics/queries.html">
+            
+                <a href="../physics/queries.html">
+            
+                    
+                    查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../physics/debugging.html">
+            
+                <a href="../physics/debugging.html">
+            
+                    
+                    调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../audio/">
+            
+                <a href="../audio/">
+            
+                    
+                    音乐和音效
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../audio/playing.html">
+            
+                <a href="../audio/playing.html">
+            
+                    
+                    背景音乐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../audio/operations.html">
+            
+                <a href="../audio/operations.html">
+            
+                    
+                    声音控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.3" data-path="../audio/advanced.html">
+            
+                <a href="../audio/advanced.html">
+            
+                    
+                    高级功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.4" data-path="../audio/engines.html">
+            
+                <a href="../audio/engines.html">
+            
+                    
+                    Audio Engine TODO
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../advanced_topics/">
+            
+                <a href="../advanced_topics/">
+            
+                    
+                    高级话题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="../advanced_topics/filesystem.html">
+            
+                <a href="../advanced_topics/filesystem.html">
+            
+                    
+                    文件接入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.2" data-path="../advanced_topics/networking.html">
+            
+                <a href="../advanced_topics/networking.html">
+            
+                    
+                    网络访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.3" data-path="../advanced_topics/oppo.html">
+            
+                <a href="../advanced_topics/oppo.html">
+            
+                    
+                    OPPO 优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.4" data-path="../advanced_topics/optimizing.html">
+            
+                <a href="../advanced_topics/optimizing.html">
+            
+                    
+                    图形性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.5" data-path="../advanced_topics/shaders.html">
+            
+                <a href="../advanced_topics/shaders.html">
+            
+                    
+                    着色器和材质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.6" data-path="../advanced_topics/sqlite.html">
+            
+                <a href="../advanced_topics/sqlite.html">
+            
+                    
+                    SQLite 集成 TODO
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">环境与工具</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../installation/">
+            
+                <a href="../installation/">
+            
+                    
+                    环境搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../installation/Android-Studio.html">
+            
+                <a href="../installation/Android-Studio.html">
+            
+                    
+                    Android 平台
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1.1" data-path="../installation/Android-Studio.html">
+            
+                <a href="../installation/Android-Studio.html">
+            
+                    
+                    Android Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.1.2" data-path="../installation/Android-terminal.html">
+            
+                <a href="../installation/Android-terminal.html">
+            
+                    
+                    命令行 (已弃用)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.1.3" data-path="../installation/Android-Eclipse.html">
+            
+                <a href="../installation/Android-Eclipse.html">
+            
+                    
+                    Eclipse (已弃用)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../installation/iOS.html">
+            
+                <a href="../installation/iOS.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../installation/OSX.html">
+            
+                <a href="../installation/OSX.html">
+            
+                    
+                    macOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../installation/Linux.html">
+            
+                <a href="../installation/Linux.html">
+            
+                    
+                    Linux 平台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../installation/Windows.html">
+            
+                <a href="../installation/Windows.html">
+            
+                    
+                    Windows 平台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../installation/CMake-Guide.html">
+            
+                <a href="../installation/CMake-Guide.html">
+            
+                    
+                    CMake 指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../editors_and_tools/cocosCLTool.html">
+            
+                <a href="../editors_and_tools/cocosCLTool.html">
+            
+                    
+                    引擎工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../editors_and_tools/cocosCLTool.html">
+            
+                <a href="../editors_and_tools/cocosCLTool.html">
+            
+                    
+                    cocos 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../editors_and_tools/creator_to_cocos2dx.html">
+            
+                <a href="../editors_and_tools/creator_to_cocos2dx.html">
+            
+                    
+                    Creator to Cocos2d-x 插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    解决方案常见问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../faq/android.html">
+            
+                <a href="../faq/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../faq/cmake.html">
+            
+                <a href="../faq/cmake.html">
+            
+                    
+                    CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="../faq/linux.html">
+            
+                <a href="../faq/linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="../faq/macos.html">
+            
+                <a href="../faq/macos.html">
+            
+                    
+                    MacOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.5" data-path="../faq/windows.html">
+            
+                <a href="../faq/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="cocos-navbar navbar-collapse" id="navbar" role="navigation">
+    <ul class="nav navbar-nav">
+        <li><a href="https://cocos2d-x.org" class="btn" target="_blank"><img src="//forum.cocos.com/images/logo.png" height="30" /></a></li>
+        <li><a href="#" class="btn autohide" onclick="toggleLanguage()">English</a></li>
+
+    
+    <li>
+        <a href="#" class="btn autohide"><i class="fa fa-book"></i>Cocos Creator</a>
+        <ul class="hovershow">
+            
+            <li><a href="https://docs.cocos2d-x.org/creator/zh/" class="btn">手册文档</a></li>
+            
+            <li><a href="https://docs.cocos2d-x.org/creator-api/zh/" class="btn">API 参考</a></li>
+            
+        </ul>
+    </li>
+    
+
+    
+    <li>
+        <a href="#" class="btn autohide"><i class="fa fa-book"></i>Cocos2d-x</a>
+        <ul class="hovershow">
+            
+            <li><a href="https://docs.cocos2d-x.org/cocos2d-x/zh/" class="btn">手册文档</a></li>
+            
+            <li><a href="https://docs.cocos2d-x.org/api-ref/index.html" class="btn">API 参考</a></li>
+            
+        </ul>
+    </li>
+    
+
+    </ul>
+</div>
+<div class="book-header" role="navigation">
+    
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >地形(Terrain)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5730;&#x5F62;terrain">&#x5730;&#x5F62;(Terrain)</h1>
+<p>&#x5730;&#x5F62; <code>Terrain</code> &#x662F; 3D &#x6E38;&#x620F;&#x4E2D;&#x91CD;&#x8981;&#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#xFF0C;&#x5730;&#x5F62;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x8F7D;&#x5165;&#x4E00;&#x5F20;&#x9AD8;&#x5EA6;&#x56FE;&#x548C;&#x82E5;&#x5E72;&#x5F20;&#x7EC6;&#x8282;&#x7EB9;&#x7406;&#xFF0C;&#x4ECE;&#x800C;&#x5728;&#x573A;&#x666F;&#x4E2D;&#x7ED8;&#x5236;&#x82E5;&#x5E72;&#x9AD8;&#x4F4E;&#x4E0D;&#x5E73;&#x7684;&#x51E0;&#x4F55;&#x4F53;&#xFF0C;&#x7528;&#x4EE5;&#x5728;&#x6E38;&#x620F;&#x573A;&#x666F;&#x4E2D;&#x6A21;&#x62DF;&#x81EA;&#x7136;&#x4E2D;&#x7684;&#x6C99;&#x6F20;&#xFF0C;&#x8349;&#x539F;&#x7B49;&#x666F;&#x8C61;&#x3002;&#x4ECE;&#x5730;&#x5F62;&#x7684;&#x8D44;&#x6E90;&#x6784;&#x6210;&#x89D2;&#x5EA6;&#x6765;&#x8BF4;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x4E0B;&#x9762;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;</p>
+<h2 id="&#x9AD8;&#x5EA6;&#x56FE;">&#x9AD8;&#x5EA6;&#x56FE;</h2>
+<p>&#x9AD8;&#x5EA6;&#x56FE;&#x4ECE;&#x672C;&#x8D28;&#x800C;&#x8A00;&#xFF0C;&#x4E5F;&#x662F;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#xFF0C;&#x4F46;&#x662F;&#x56FE;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x50CF;&#x7D20;&#x7684;&#x989C;&#x8272;&#x503C;&#x5E76;&#x4E0D;&#x88AB;&#x5F53;&#x505A;&#x989C;&#x8272;&#xFF0C;&#x800C;&#x662F;&#x88AB;&#x89C6;&#x4E3A;&#x4E00;&#x4E2A;&#x9AD8;&#x5EA6;&#x503C;&#x3002;<code>Terrain</code> &#x5BF9;&#x8C61;&#x901A;&#x8FC7;&#x9AD8;&#x5EA6;&#x56FE;&#x6240;&#x7ED9;&#x7684;&#x9AD8;&#x5EA6;&#x4FE1;&#x606F;&#xFF0C;&#x52A0;&#x4EE5;&#x9002;&#x5F53;&#x7684;&#x7F29;&#x653E;&#xFF0C;&#x6784;&#x5EFA;&#x51FA;&#x6574;&#x4E2A;&#x5730;&#x5F62;&#x7684;&#x7F51;&#x683C;&#x7ED3;&#x6784;&#x3002;</p>
+<h2 id="&#x7EC6;&#x8282;&#x56FE;">&#x7EC6;&#x8282;&#x56FE;</h2>
+<p>&#x5982;&#x679C;&#x8BF4;&#x9AD8;&#x5EA6;&#x56FE;&#x786E;&#x5B9A;&#x4E86;&#x6574;&#x4E2A;&#x5730;&#x5F62;&#x7684;&#x51E0;&#x4F55;&#x5F62;&#x72B6;&#xFF0C;&#x90A3;&#x4E48;&#x7EC6;&#x8282;&#x56FE;&#x5219;&#x786E;&#x5B9A;&#x4E86;&#x5730;&#x5F62;&#x7684;&#x5916;&#x89C2;&#x3002;&#x901A;&#x8FC7;&#x5C06;&#x7EC6;&#x8282;&#x56FE;&#x8D34;&#x5728;&#x5730;&#x5F62;&#x4E0A;&#xFF0C;&#x53EF;&#x4EE5;&#x5236;&#x9020;&#x975E;&#x5E38;&#x597D;&#x7684;&#x8868;&#x73B0;&#x6548;&#x679C;&#x3002;&#x6700;&#x591A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x56DB;&#x4E2A;&#x7EB9;&#x7406;&#x4F5C;&#x4E3A;&#x7EC6;&#x8282;&#x56FE;&#x3002;</p>
+<h2 id="alpha&#x8D34;&#x56FE;">Alpha&#x8D34;&#x56FE;</h2>
+<p>Alpha&#x8D34;&#x56FE;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x7EC6;&#x8282;&#x56FE;&#x662F;&#x5728;&#x5730;&#x5F62;&#x4E0A;&#x4F55;&#x5904;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x7ED8;&#x5236;&#x7684;&#x3002;Alpha&#x8D34;&#x56FE;&#x4ECE;&#x672C;&#x8D28;&#x800C;&#x8A00;&#xFF0C;&#x4E5F;&#x662F;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x5C06;&#x56FE;&#x7247;&#x4E2D;&#x6BCF;&#x4E2A;&#x50CF;&#x7D20;&#x4E2D;&#x7684; Red,Green,Blue &#x4EE5;&#x53CA;Alpha&#x901A;&#x9053;&#x5BF9;&#x5E94;&#x56DB;&#x5F20;&#x7EC6;&#x8282;&#x56FE;&#x5728;&#x5730;&#x5F62;&#x7684;&#x67D0;&#x4E2A;&#x4F4D;&#x7F6E;&#x4E0A;&#xFF0C;&#x6BCF;&#x4E00;&#x5F20;&#x7EC6;&#x8282;&#x56FE;&#x989C;&#x8272;&#x6BD4;&#x4F8B;&#x662F;&#x591A;&#x5C11;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x5730;&#x5F62;&#x4E0A;&#x540C;&#x65F6;&#x51FA;&#x73B0;&#x8BF8;&#x5982;&#x6C99;&#x4E18;&#xFF0C;&#x77F3;&#x677F;&#x8DEF;&#xFF0C;&#x8349;&#x5730;&#x7B49;&#x7EB9;&#x7406;&#xFF0C;&#x4F7F;&#x5F97;&#x5730;&#x5F62;&#x7684;&#x5916;&#x89C2;&#x4E0D;&#x518D;&#x90A3;&#x4E48;&#x5355;&#x8C03;&#x3002;</p>
+<h2 id="&#x7EC6;&#x8282;&#x7EA7;&#x522B;&#x7B56;&#x7565;">&#x7EC6;&#x8282;&#x7EA7;&#x522B;&#x7B56;&#x7565;</h2>
+<p><code>Terrain</code> &#x4F7F;&#x7528;&#x7EC6;&#x8282;&#x7EA7;&#x522B;(Level Of Detail)&#x7B56;&#x7565;&#xFF0C;&#x5B83;&#x6839;&#x636E;&#x6444;&#x50CF;&#x673A;&#x79BB;&#x5BF9;&#x8C61;&#x7684;&#x8FDC;&#x8FD1;&#xFF0C;&#x5207;&#x6362;&#x4E0D;&#x540C;&#x7EC6;&#x8282;&#x7EA7;&#x522B;&#xFF0C;&#x8FBE;&#x5230;&#x4E00;&#x79CD;&#x8FD1;&#x5904;&#x7684;&#x5BF9;&#x8C61;&#x7EC6;&#x8282;&#x4E30;&#x5BCC;&#xFF0C;&#x8FDC;&#x5904;&#x7684;&#x5BF9;&#x8C61;&#x7EC6;&#x8282;&#x7B80;&#x5355;&#xFF0C;&#x8FD9;&#x6837;&#x51CF;&#x5C11;&#x4E86;&#x6574;&#x4F53;&#x9700;&#x8981;&#x6E32;&#x67D3;&#x7684;&#x4E09;&#x89D2;&#x5F62;&#x6570;&#x91CF;&#xFF0C;&#x63D0;&#x9AD8;&#x4E86;&#x6027;&#x80FD;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>Terrain::setLODDistance(float lod1, float lod2, float lod3</code> &#x65B9;&#x6CD5;&#x8BBE;&#x7F6E;&#x6444;&#x50CF;&#x673A;&#x7684;&#x8DDD;&#x79BB;&#x3002; &#x5177;&#x6709;&#x4E0D;&#x540C;&#x7EC6;&#x8282;&#x7EA7;&#x522B;&#x7684;&#x5730;&#x5F62;&#x76F8;&#x90BB;&#x5757;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x88C2;&#x7F1D;&#xFF0C;<code>Terrain</code> &#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;(&#x88D9;&#x8FB9;&#x6CD5;&#xFF0C;&#x8865;&#x8FB9;&#x6CD5;)&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x51FA;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp">Terrain::CrackFixedType::SKIRT
+
+Terrain::CrackFixedType::INCREASE_LOWER
+</code></pre>
+<p><strong>Terrain::CrackFixedType::SKIRT</strong> &#x88D9;&#x8FB9;&#x6CD5;&#xFF1A;&#x5728;&#x5757;&#x7684;&#x6BCF;&#x4E2A;&#x8FB9;&#x7F18;&#x751F;&#x6210;&#x56DB;&#x4E2A;&#x88D9;&#x72B6;&#x7F51;&#x683C;</p>
+<p><strong>Terrain::CrackFixedType::INCREASE_LOWER</strong> &#x8865;&#x8FB9;&#x6CD5;&#xFF1A;&#x52A8;&#x6001;&#x8C03;&#x6574;&#x6BCF;&#x4E2A;&#x5FEB;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x4F7F;&#x5176;&#x65E0;&#x7F1D;&#x8FDE;&#x63A5;</p>
+<h2 id="&#x521B;&#x5EFA;&#x5730;&#x5F62;">&#x521B;&#x5EFA;&#x5730;&#x5F62;</h2>
+<p>&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5730;&#x5F62;&#xFF0C;&#x5E76;&#x5728;&#x4E0A;&#x9762;&#x653E;&#x4E00;&#x4E2A;&#x7CBE;&#x7075;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> player = Sprite3D::create(<span class="hljs-string">&quot;chapter9/orc.c3b&quot;</span>);
+player-&gt;setScale(<span class="hljs-number">0.08</span>);
+player-&gt;setPositionY(terrain-&gt;getHeight(player-&gt;getPositionX(),player-&gt;getPositionZ()));
+</code></pre>
+<p><img src="../../en/3d/3d-img/9_10.png" alt=""></p>
+<ul>
+<li>&#x901A;&#x8FC7; <code>Terrain::DetailMap</code> &#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x7EC6;&#x8282;&#x56FE;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-cpp">Terrain::<span class="hljs-function">DetailMap <span class="hljs-title">r</span><span class="hljs-params">(<span class="hljs-string">&quot;dirt.dds&quot;</span>)</span></span>;
+Terrain::<span class="hljs-function">DetailMap <span class="hljs-title">g</span><span class="hljs-params">(<span class="hljs-string">&quot;grass.dds&quot;</span>)</span></span>;
+Terrain::<span class="hljs-function">DetailMap <span class="hljs-title">b</span><span class="hljs-params">(<span class="hljs-string">&quot;road.dds&quot;</span>)</span></span>;
+Terrain::<span class="hljs-function">DetailMap <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-string">&quot;greenSkin.jpg&quot;</span>)</span></span>;
+</code></pre>
+<ul>
+<li>&#x6784;&#x9020; <code>Terrain::TerrainData</code> &#x5BF9;&#x8C61;&#xFF0C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x9AD8;&#x5EA6;&#x56FE;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4E3A; Alpha &#x8D34;&#x56FE;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x56DB;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x4E4B;&#x524D;&#x6240;&#x6784;&#x9020;&#x7684;&#x56DB;&#x4E2A; DetailMap &#x7ED3;&#x6784;&#x4F53;&#x3002;</li>
+</ul>
+<pre><code class="lang-cpp">Terrain::<span class="hljs-function">TerrainData <span class="hljs-title">data</span><span class="hljs-params">(<span class="hljs-string">&quot;chapter9/heightmap16.jpg&quot;</span>,<span class="hljs-string">&quot;TerrainTest/alphamap.png&quot;</span>, r, g, b, a)</span></span>;
+</code></pre>
+<ul>
+<li>&#x8C03;&#x7528; <code>Terrain::create</code> &#x521B;&#x5EFA;&#x51FA;&#x5730;&#x5F62;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E4B;&#x524D;&#x6784;&#x9020;&#x597D;&#x7684; <code>TerrainData</code> &#x5BF9;&#x8C61;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x7EC6;&#x8282;&#x7EA7;&#x522B;&#x7B56;&#x7565;&#x3002;</li>
+</ul>
+<pre><code class="lang-cpp">_terrain = Terrain::create(data, Terrain::CrackFixedType::SKIRT);
+</code></pre>
+<ul>
+<li>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x5730;&#x5F62;&#x5BF9;&#x8C61;&#x88AB;&#x6DFB;&#x52A0;&#x5230;&#x8282;&#x70B9;&#x6216;&#x573A;&#x666F;&#x4E2D;(&#x8FDB;&#x884C;&#x4E86; <code>addChild()</code> &#x64CD;&#x4F5C;)&#x540E;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x518D;&#x5BF9;&#x5730;&#x5F62;&#x5BF9;&#x8C61;&#x4F7F;&#x7528;&#x8F6C;&#x6362;&#xFF0C;&#x6BD4;&#x5982;&#x7F29;&#x653E;&#x5927;&#x5C0F;&#x3002; &#x5426;&#x5219;&#xFF0C;<code>Terrain</code> &#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x96BE;&#x4EE5;&#x9884;&#x6599;&#x7684;&#x7ED3;&#x679C;&#x3002;</li>
+</ul>
+<h3 id="&#x83B7;&#x53D6;&#x5730;&#x5F62;&#x9AD8;&#x5EA6;">&#x83B7;&#x53D6;&#x5730;&#x5F62;&#x9AD8;&#x5EA6;</h3>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5; <code>Terrain::getHeight(float x, float z, Vec3 * normal= nullptr)</code> &#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x5730;&#x5F62;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x5F53;&#x4F60;&#x60F3;&#x628A;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x653E;&#x5230;&#x5730;&#x5F62;&#x8868;&#x9762;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="lighting.html" class="navigation navigation-prev " aria-label="Previous page: 光照(Light)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tools.html" class="navigation navigation-next " aria-label="Next page: 常用工具">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"地形(Terrain)","level":"3.3.7","depth":2,"next":{"title":"常用工具","level":"3.3.8","depth":2,"path":"3d/tools.md","ref":"3d/tools.md","articles":[]},"previous":{"title":"光照(Light)","level":"3.3.6","depth":2,"path":"3d/lighting.md","ref":"3d/lighting.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","github-issue-feedback-language-custom","search-title","anchorjs","toggle-chapters","sharing"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"search":{"maxIndexSize":1000000000},"lunr":{"maxIndexSize":1000000000},"fontsettings":{"theme":"white","family":"sans","size":2},"search-title":{},"highlight":{},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper"],"douban":false,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"github-issue-feedback-language-custom":{"repo":"cocos-creator/creator-docs","branch":"master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"products":[{"name":"Cocos Creator","links":[{"name":"手册文档","link":"https://docs.cocos2d-x.org/creator/zh/"},{"name":"API 参考","link":"https://docs.cocos2d-x.org/creator-api/zh/"}]},{"name":"Cocos2d-x","links":[{"name":"手册文档","link":"https://docs.cocos2d-x.org/cocos2d-x/zh/"},{"name":"API 参考","link":"https://docs.cocos2d-x.org/api-ref/index.html"}]}],"version":[{"name":"3.x","links":[{"name":"3.x","link":"https://docs.cocos2d-x.org/cocos2d-x/v3/zh/"},{"name":"4.x","link":"https://docs.cocos2d-x.org/cocos2d-x/v4/zh/"}]}]},"language":"zh-hans","gitbook":"*"},"file":{"path":"3d/terrain.md","mtime":"2021-03-30T02:21:10.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-30T02:49:05.393Z"},"basePath":"..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-issue-feedback-language-custom/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-title/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-title/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script type="text/javascript">
+    function toggleLanguage () {
+        var path = location.href;
+        // console.log(path);
+        if (path.indexOf('/zh') !== -1) {
+            path = path.replace(/\/zh[\/$\s]/i, '/en/');
+        } else if (path.indexOf('/en') !== -1) {
+            path = path.replace(/\/en[\/$\s]/i, '/zh/');
+        }
+        // console.log('after: ' + path);    
+        location.assign(path);
+    }
+    </script>
+
+    </body>
+</html>
+

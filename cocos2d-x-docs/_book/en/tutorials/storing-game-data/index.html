@@ -1,0 +1,2319 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Storing Game Data · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-title/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../youre-on-camera/" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+    <nav role="navigation" class="autoshow">
+        <ul class="summary">
+        <li><a href="https://cocos2d-x.org" class="btn" target="_blank"><img src="//forum.cocos.com/images/logo.png" height="30" /></a></li>
+        <li><a href="#" class="btn" onclick="toggleLanguage()">中文</a></li>
+        
+        
+        <li class="version-link">
+            <a href="#" class="btn" style="color:#444"></i>Version: <span style="font-weight: bold; display: inline">3.x</span></a>
+            <ul class="hovershow">
+                
+                <li><a href="https://docs.cocos2d-x.org/cocos2d-x/v3/en" class="btn">Version: <span style="font-weight:bold; display: inline">3.x</span></a></li>
+                
+                <li><a href="https://docs.cocos2d-x.org/cocos2d-x/v4/en" class="btn">Version: <span style="font-weight:bold; display: inline">4.x</span></a></li>
+                
+            </ul>
+        </li>
+        
+        
+        
+        
+        <li><a href="https://docs.cocos2d-x.org/api-ref/index.html" class="btn"><i class="fa fa-book"></i>API Reference</a></li>
+        
+    
+        
+        <li>
+            <a href="#" class="btn"><i class="fa fa-book"></i>Cocos Creator</a>
+            <ul>
+                
+                <li><a href="https://docs.cocos2d-x.org/creator/manual/" class="btn">Manual</a></li>
+                
+                <li><a href="https://docs.cocos2d-x.org/creator/api/" class="btn">API</a></li>
+                
+            </ul>
+        </li>
+        
+    
+        </ul>
+    </nav>
+    
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../about/getting_started.html">
+            
+                <a href="../../about/getting_started.html">
+            
+                    
+                    About Cocos2d-x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../about/why.html">
+            
+                <a href="../../about/why.html">
+            
+                    
+                    Why Cocos2d-x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../about/learn.html">
+            
+                <a href="../../about/learn.html">
+            
+                    
+                    How to learn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../about/help.html">
+            
+                <a href="../../about/help.html">
+            
+                    
+                    Where to get help
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../../about/how.html">
+            
+                <a href="../../about/how.html">
+            
+                    
+                    How to contribute
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../basic_concepts/">
+            
+                <a href="../../basic_concepts/">
+            
+                    
+                    Basic Cocos2d-x Concepts
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../basic_concepts/getting_started.html">
+            
+                <a href="../../basic_concepts/getting_started.html">
+            
+                    
+                    Main Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../basic_concepts/director.html">
+            
+                <a href="../../basic_concepts/director.html">
+            
+                    
+                    Director
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../basic_concepts/scene.html">
+            
+                <a href="../../basic_concepts/scene.html">
+            
+                    
+                    Scenes and the Scene graph
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../basic_concepts/sprites.html">
+            
+                <a href="../../basic_concepts/sprites.html">
+            
+                    
+                    Sprites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../basic_concepts/actions.html">
+            
+                <a href="../../basic_concepts/actions.html">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../basic_concepts/sequences.html">
+            
+                <a href="../../basic_concepts/sequences.html">
+            
+                    
+                    Sequences and Spawns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../basic_concepts/parent_child.html">
+            
+                <a href="../../basic_concepts/parent_child.html">
+            
+                    
+                    Parent Child Relationship
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../basic_concepts/logging.html">
+            
+                <a href="../../basic_concepts/logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../sprites/">
+            
+                <a href="../../sprites/">
+            
+                    
+                    Sprites
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../sprites/getting_started.html">
+            
+                <a href="../../sprites/getting_started.html">
+            
+                    
+                    What are Sprites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../sprites/creating.html">
+            
+                <a href="../../sprites/creating.html">
+            
+                    
+                    Creating Sprites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../sprites/spritesheets.html">
+            
+                <a href="../../sprites/spritesheets.html">
+            
+                    
+                    Spritesheets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../sprites/spriteframe_cache.html">
+            
+                <a href="../../sprites/spriteframe_cache.html">
+            
+                    
+                    SpriteFrame Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../sprites/manipulation.html">
+            
+                <a href="../../sprites/manipulation.html">
+            
+                    
+                    Sprite Manipulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../sprites/polygon.html">
+            
+                <a href="../../sprites/polygon.html">
+            
+                    
+                    Polygon Sprite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../actions/">
+            
+                <a href="../../actions/">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../actions/getting_started.html">
+            
+                <a href="../../actions/getting_started.html">
+            
+                    
+                    What are Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../actions/basic.html">
+            
+                <a href="../../actions/basic.html">
+            
+                    
+                    Basic Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../actions/sequences.html">
+            
+                <a href="../../actions/sequences.html">
+            
+                    
+                    Sequences
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../actions/sequence_internals.html">
+            
+                <a href="../../actions/sequence_internals.html">
+            
+                    
+                    Sequence Internals
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../scenes/">
+            
+                <a href="../../scenes/">
+            
+                    
+                    Building and Transitioning Scenes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../scenes/getting_started.html">
+            
+                <a href="../../scenes/getting_started.html">
+            
+                    
+                    What are Scenes?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../scenes/creating.html">
+            
+                <a href="../../scenes/creating.html">
+            
+                    
+                    Creating Scenes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../scenes/transitioning.html">
+            
+                <a href="../../scenes/transitioning.html">
+            
+                    
+                    Transitioning Scenes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../ui_components/">
+            
+                <a href="../../ui_components/">
+            
+                    
+                    UI Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../ui_components/getting_started.html">
+            
+                <a href="../../ui_components/getting_started.html">
+            
+                    
+                    Widgets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../ui_components/labels.html">
+            
+                <a href="../../ui_components/labels.html">
+            
+                    
+                    Label
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../ui_components/menus.html">
+            
+                <a href="../../ui_components/menus.html">
+            
+                    
+                    Menu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../ui_components/buttons.html">
+            
+                <a href="../../ui_components/buttons.html">
+            
+                    
+                    Buttons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../ui_components/checkboxes.html">
+            
+                <a href="../../ui_components/checkboxes.html">
+            
+                    
+                    Checkbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../ui_components/loading_bar.html">
+            
+                <a href="../../ui_components/loading_bar.html">
+            
+                    
+                    Loading Bar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../ui_components/sliders.html">
+            
+                <a href="../../ui_components/sliders.html">
+            
+                    
+                    Slider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../ui_components/textfields.html">
+            
+                <a href="../../ui_components/textfields.html">
+            
+                    
+                    TextField
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../other_node_types/">
+            
+                <a href="../../other_node_types/">
+            
+                    
+                    Other Node Types
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../other_node_types/getting_started.html">
+            
+                <a href="../../other_node_types/getting_started.html">
+            
+                    
+                    More than just a Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../other_node_types/tilemap.html">
+            
+                <a href="../../other_node_types/tilemap.html">
+            
+                    
+                    TileMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../other_node_types/particles.html">
+            
+                <a href="../../other_node_types/particles.html">
+            
+                    
+                    Particle System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../other_node_types/parallax.html">
+            
+                <a href="../../other_node_types/parallax.html">
+            
+                    
+                    Parallax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../event_dispatcher/">
+            
+                <a href="../../event_dispatcher/">
+            
+                    
+                    Event Dispatcher
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../event_dispatcher/getting_started.html">
+            
+                <a href="../../event_dispatcher/getting_started.html">
+            
+                    
+                    What is the EventDispatch mechanism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../event_dispatcher/types.html">
+            
+                <a href="../../event_dispatcher/types.html">
+            
+                    
+                    Types of event listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../event_dispatcher/priority.html">
+            
+                <a href="../../event_dispatcher/priority.html">
+            
+                    
+                    Events Priority
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../event_dispatcher/touch.html">
+            
+                <a href="../../event_dispatcher/touch.html">
+            
+                    
+                    Touch Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../../event_dispatcher/keyboard.html">
+            
+                <a href="../../event_dispatcher/keyboard.html">
+            
+                    
+                    Keyboard Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../../event_dispatcher/accelerometer.html">
+            
+                <a href="../../event_dispatcher/accelerometer.html">
+            
+                    
+                    Accelerometer Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../../event_dispatcher/mouse.html">
+            
+                <a href="../../event_dispatcher/mouse.html">
+            
+                    
+                    Mouse Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../../event_dispatcher/custom.html">
+            
+                <a href="../../event_dispatcher/custom.html">
+            
+                    
+                    Creating Custom Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../../event_dispatcher/registering.html">
+            
+                <a href="../../event_dispatcher/registering.html">
+            
+                    
+                    Registering Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../3d/">
+            
+                <a href="../../3d/">
+            
+                    
+                    3D
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../3d/terminology.html">
+            
+                <a href="../../3d/terminology.html">
+            
+                    
+                    Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../3d/sprite3d.html">
+            
+                <a href="../../3d/sprite3d.html">
+            
+                    
+                    Sprite3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../3d/animation.html">
+            
+                <a href="../../3d/animation.html">
+            
+                    
+                    Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../../3d/camera.html">
+            
+                <a href="../../3d/camera.html">
+            
+                    
+                    Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../../3d/cubemap.html">
+            
+                <a href="../../3d/cubemap.html">
+            
+                    
+                    Cubemap Texture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../../3d/skybox.html">
+            
+                <a href="../../3d/skybox.html">
+            
+                    
+                    Skybox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../../3d/lighting.html">
+            
+                <a href="../../3d/lighting.html">
+            
+                    
+                    Lighting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../../3d/terrain.html">
+            
+                <a href="../../3d/terrain.html">
+            
+                    
+                    Terrain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../../3d/tools.html">
+            
+                <a href="../../3d/tools.html">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../../3d/advanced.html">
+            
+                <a href="../../3d/advanced.html">
+            
+                    
+                    Advanced 3D Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../scripting/">
+            
+                <a href="../../scripting/">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../scripting/script_component.html">
+            
+                <a href="../../scripting/script_component.html">
+            
+                    
+                    Script component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../physics/">
+            
+                <a href="../../physics/">
+            
+                    
+                    Physics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../physics/getting_started.html">
+            
+                <a href="../../physics/getting_started.html">
+            
+                    
+                    Physics is scary!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../physics/concepts.html">
+            
+                <a href="../../physics/concepts.html">
+            
+                    
+                    Terminology and concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../physics/collisions.html">
+            
+                <a href="../../physics/collisions.html">
+            
+                    
+                    Collision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../../physics/queries.html">
+            
+                <a href="../../physics/queries.html">
+            
+                    
+                    Queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../../physics/debugging.html">
+            
+                <a href="../../physics/debugging.html">
+            
+                    
+                    Debugging/Disabling
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../audio/">
+            
+                <a href="../../audio/">
+            
+                    
+                    Audio
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../../audio/getting_started.html">
+            
+                <a href="../../audio/getting_started.html">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../../audio/playing.html">
+            
+                <a href="../../audio/playing.html">
+            
+                    
+                    Playing Sound
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../../audio/operations.html">
+            
+                <a href="../../audio/operations.html">
+            
+                    
+                    Manipulating Sound
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../../audio/advanced.html">
+            
+                <a href="../../audio/advanced.html">
+            
+                    
+                    Advanced Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../../audio/engines.html">
+            
+                <a href="../../audio/engines.html">
+            
+                    
+                    Audio Engines Compared
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../../advanced_topics/">
+            
+                <a href="../../advanced_topics/">
+            
+                    
+                    Advanced Topics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../../advanced_topics/filesystem.html">
+            
+                <a href="../../advanced_topics/filesystem.html">
+            
+                    
+                    File System Access
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../../advanced_topics/networking.html">
+            
+                <a href="../../advanced_topics/networking.html">
+            
+                    
+                    Networking with HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../../advanced_topics/oppo.html">
+            
+                <a href="../../advanced_topics/oppo.html">
+            
+                    
+                    OPPO Optimizations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../../advanced_topics/optimizing.html">
+            
+                <a href="../../advanced_topics/optimizing.html">
+            
+                    
+                    Optimizing Graphics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../../advanced_topics/shaders.html">
+            
+                <a href="../../advanced_topics/shaders.html">
+            
+                    
+                    Shaders and Materials
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../../advanced_topics/sqlite.html">
+            
+                <a href="../../advanced_topics/sqlite.html">
+            
+                    
+                    SQLite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../../installation/">
+            
+                <a href="../../installation/">
+            
+                    
+                    Software Installations
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../../installation/prerequisites.html">
+            
+                <a href="../../installation/prerequisites.html">
+            
+                    
+                    Prerequisites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../../installation/Android-Studio.html">
+            
+                <a href="../../installation/Android-Studio.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.2.1" data-path="../../installation/Android-Studio.html">
+            
+                <a href="../../installation/Android-Studio.html">
+            
+                    
+                    Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2.2" data-path="../../installation/Android-terminal.html">
+            
+                <a href="../../installation/Android-terminal.html">
+            
+                    
+                    Command-line (Deprecated)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2.3" data-path="../../installation/Android-VisualStudio.html">
+            
+                <a href="../../installation/Android-VisualStudio.html">
+            
+                    
+                    Visual Studio (Deprecated)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2.4" data-path="../../installation/Android-Eclipse.html">
+            
+                <a href="../../installation/Android-Eclipse.html">
+            
+                    
+                    Eclipse (Deprecated)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../../installation/iOS.html">
+            
+                <a href="../../installation/iOS.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../../installation/OSX.html">
+            
+                <a href="../../installation/OSX.html">
+            
+                    
+                    macOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../../installation/Linux.html">
+            
+                <a href="../../installation/Linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" data-path="../../installation/Tizen.html">
+            
+                <a href="../../installation/Tizen.html">
+            
+                    
+                    Tizen (Deprecated)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" data-path="../../installation/Windows.html">
+            
+                <a href="../../installation/Windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.7.1" data-path="../../installation/Windows.html">
+            
+                <a href="../../installation/Windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7.2" data-path="../../installation/Windows-Phone.html">
+            
+                <a href="../../installation/Windows-Phone.html">
+            
+                    
+                    Windows Phone (Deprecated)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" data-path="../../installation/CMake-Guide.html">
+            
+                <a href="../../installation/CMake-Guide.html">
+            
+                    
+                    CMake Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../../editors_and_tools/">
+            
+                <a href="../../editors_and_tools/">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../../editors_and_tools/cocosCLTool.html">
+            
+                <a href="../../editors_and_tools/cocosCLTool.html">
+            
+                    
+                    Command-Line tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../../editors_and_tools/creator_to_cocos2dx.html">
+            
+                <a href="../../editors_and_tools/creator_to_cocos2dx.html">
+            
+                    
+                    Creator to Cocos2d-x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.16.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Storing Game Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../youre-on-camera/">
+            
+                <a href="../youre-on-camera/">
+            
+                    
+                    You're On Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../dr-mario-style-game.md">
+            
+                <span>
+            
+                    
+                    Dr. Mario in Cocos Creator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../../faq/">
+            
+                <a href="../../faq/">
+            
+                    
+                    FAQ of Solutions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../../faq/android.html">
+            
+                <a href="../../faq/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../../faq/cmake.html">
+            
+                <a href="../../faq/cmake.html">
+            
+                    
+                    CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" data-path="../../faq/linux.html">
+            
+                <a href="../../faq/linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4" data-path="../../faq/macos.html">
+            
+                <a href="../../faq/macos.html">
+            
+                    
+                    MacOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5" data-path="../../faq/windows.html">
+            
+                <a href="../../faq/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="cocos-navbar navbar-collapse" id="navbar" role="navigation">
+    <ul class="nav navbar-nav">
+        <li><a href="https://cocos2d-x.org" class="btn" target="_blank"><img src="//forum.cocos.com/images/logo.png" height="30" /></a></li>
+        <li><a href="#" class="btn autohide" onclick="toggleLanguage()">中文</a></li>
+
+    
+    <li><a href="https://docs.cocos2d-x.org/api-ref/index.html" class="btn autohide"><i class="fa fa-book"></i>API Reference</a></li>
+    
+
+    
+    <li>
+        <a href="#" class="btn autohide"><i class="fa fa-book"></i>Cocos Creator</a>
+        <ul class="hovershow">
+            
+            <li><a href="https://docs.cocos2d-x.org/creator/manual/" class="btn">Manual</a></li>
+            
+            <li><a href="https://docs.cocos2d-x.org/creator/api/" class="btn">API</a></li>
+            
+        </ul>
+    </li>
+    
+
+    </ul>
+</div>
+<div class="book-header" role="navigation">
+    
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Storing Game Data</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="storing-game-data">Storing Game Data</h1>
+<p>In most every game there are probably items that need to be stored and re-read in again between game play. This could be player information, stats, leaderboards, level progress and so much more. As always there are many ways a developer can choose to store this data. Each approach has advantages and disadvantages. In this tutorial we will explore storing game data with <code>UserDefault</code> and <code>SQLite</code>.</p>
+<h2 id="userdefault">UserDefault</h2>
+<p><code>UserDefault</code> is simple <strong>key/value pair</strong> data structure. It is a <strong>global singleton</strong> that can be accessed at any time, much like the <strong>Director</strong>. <code>UserDefault</code> is always present, even if you never invoke it. It is just empty. The first time you add a <strong>key/value pair</strong> an instance is created.</p>
+<h3 id="accessing-userdefault">Accessing UserDefault</h3>
+<p>Accessing <code>UserDefault</code> is as simple as:</p>
+<pre><code class="lang-cpp">cocos2d::UserDefault::getInstance()-&gt;someFunction();
+</code></pre>
+<p>However, if you plan to access <code>UserDefault</code> more than once, it is best to grab the instance once and then use it versus accessing it each and every time you need it. Example:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> userdefaults = cocos2d::UserDefault::getInstance();
+
+userdefaults-&gt;setStringForKey(<span class="hljs-string">&quot;message&quot;</span>, <span class="hljs-string">&quot;Hello&quot;</span>);
+userdefaults-&gt;setIntegerForKey(<span class="hljs-string">&quot;score&quot;</span>, <span class="hljs-number">10</span>);
+</code></pre>
+<h3 id="adding-values-to-userdefault">Adding values to UserDefault</h3>
+<p>Adding <strong>key/value pairs</strong> to <code>UserDefault</code> is easy:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> userdefaults = cocos2d::UserDefault::getInstance();
+
+userdefaults-&gt;setStringForKey(<span class="hljs-string">&quot;message&quot;</span>, <span class="hljs-string">&quot;Hello&quot;</span>);
+userdefaults-&gt;setIntegerForKey(<span class="hljs-string">&quot;score&quot;</span>, <span class="hljs-number">10</span>);
+userdefaults-&gt;setFloatForKey(<span class="hljs-string">&quot;some_float&quot;</span>, <span class="hljs-number">2.3f</span>);
+userdefaults-&gt;setDoubleForKey(<span class="hljs-string">&quot;some_double&quot;</span>, <span class="hljs-number">2.4</span>);
+userdefaults-&gt;setBoolForKey(<span class="hljs-string">&quot;some_bool&quot;</span>, <span class="hljs-literal">true</span>);
+</code></pre>
+<h3 id="changing-values-in-userdefault">Changing values in UserDefault</h3>
+<p>It may be necessary to change a <strong>key/value pair</strong> in <code>UserDefault</code>. Perhaps you are storing the players score and it needs to be updated. This is achieved by simply setting the value a second time. Example:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> userdefaults = cocos2d::UserDefault::getInstance();
+
+userdefaults-&gt;setStringForKey(<span class="hljs-string">&quot;message&quot;</span>, <span class="hljs-string">&quot;Hello&quot;</span>);
+userdefaults-&gt;setStringForKey(<span class="hljs-string">&quot;message&quot;</span>, <span class="hljs-string">&quot;Hello Again&quot;</span>);
+</code></pre>
+<h3 id="deleting-values-to-userdefault">Deleting values to UserDefault</h3>
+<p>Deleting <strong>key/value pairs</strong> from <code>UserDefault</code> is also easy:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> userdefaults = cocos2d::UserDefault::getInstance();
+
+userdefaults-&gt;deleteValueForKey(<span class="hljs-string">&quot;message&quot;</span>);
+userdefaults-&gt;deleteValueForKey(<span class="hljs-string">&quot;score&quot;</span>);
+userdefaults-&gt;deleteValueForKey(<span class="hljs-string">&quot;some_float&quot;</span>);
+userdefaults-&gt;deleteValueForKey(<span class="hljs-string">&quot;some_double&quot;</span>);
+userdefaults-&gt;deleteValueForKey(<span class="hljs-string">&quot;some_bool&quot;</span>);
+</code></pre>
+<h3 id="resetting-userdefault">Resetting UserDefault</h3>
+<p>If you wish to clear out <code>UserDefault</code> completely and start from scratch you can simple call:</p>
+<pre><code class="lang-cpp">cocos2d::UserDefault::getInstance()-&gt;flush();
+</code></pre>
+<h3 id="assigning-userdefault-value-to-labels">Assigning UserDefault value to Labels</h3>
+<p>You probably will want to use values stored in <code>UserDefault</code> and assign them to <code>Label</code> objects for the players to see. You can achieve this with just a few lines of code. Example:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">char</span> strTemp[<span class="hljs-number">256</span>] = <span class="hljs-string">&quot;&quot;</span>;
+
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> ret = UserDefault::getInstance()-&gt;getStringForKey(<span class="hljs-string">&quot;message&quot;</span>);
+<span class="hljs-built_in">sprintf</span>(strTemp, <span class="hljs-string">&quot;string is %s&quot;</span>, ret.c_str());
+some_label-&gt;setString(strTemp);
+</code></pre>
+<h2 id="sqlite">SQLite</h2>
+<p>If your needs are more advanced than a simple key/value pair you can evaluate using a database to store and manipulate your game data. <strong>SQLite</strong> is a very popular and commonly used relational database. You can read more about <strong>SQLite</strong> on the <a href="https://sqlite.org/index.html" target="_blank"><strong>SQLite website</strong></a>.</p>
+<h3 id="setting-up-sqlite">Setting up SQLite</h3>
+<p>Download the <a href="https://sqlite.org/download.html" target="_blank"><strong>SQLite</strong></a> bundle that works for your needs. There are both <em>source code</em> and <em>pre-compiled binary</em> releases. If you use the <em>source code</em> release you can simply drop <strong>sqlite3.h</strong> and <strong>sqlite3.c</strong> into your source tree and use <strong>include</strong> to bring in <strong>SQLite</strong>. If you use <em>pre-compiled binaries</em> you will need to add this as part of your <em>library search paths</em>.</p>
+<h3 id="creating-a-database">Creating a database</h3>
+<p>There are a few ways to create a new <strong>SQLite</strong> database. </p>
+<h4 id="shipping-a-default-database">Shipping a default database</h4>
+<p>If you download the <a href="https://sqlite.org/cli.html" target="_blank"><strong>SQLite CLI</strong></a> you can use the command-line to interact with <strong>SQLite</strong> and all of it&apos;s functionality. If you choose this approach you will need to ship your database with you game as you are not creating it in code. This method allows you to use less <em>SQL code</em> up front, making your coding a bit less. However, you will still need to use <em>SQL code</em> when your game needs to interact with the database.</p>
+<h4 id="programatically-creating-a-database">Programatically creating a database</h4>
+<p>If you don&apos;t wish to ship a default/pre-populated database you can always create a new database on the first launch of the game and then check if the database exists on each subsequent launch. This approach means more code. We will cover this approach in the next sections.</p>
+<h3 id="working-with-sqlite-programatically">Working with SQLite programatically</h3>
+<p>There are several working pieces that are needed to interact with any database, not just <strong>SQlite</strong>. Let&apos;s take a look at what they are:</p>
+<blockquote>
+<p><strong>a connection to the database:</strong> You can either maintain a persistent database connection while you game is running or open and close the connection as needed. If you maintain a persistent database connection, if the dataase connection gets lost you will need to handle these type of error and re-connect (this is unlikely with <strong>SQLite</strong>). If you open and close as needed you always have a connection but if multiple parts of your game are doing this at the same time you may experience locking issues or database corruption.</p>
+<p><strong>a database to work with:</strong> either ship one with your game or create one programatically on the first launch. In either case you will need to have a database to work with.</p>
+<p><strong>populating the database with default values:</strong> either shipping a pre-populated database with your game or creating the default values on first launch.</p>
+<p><strong>checking values from the database:</strong> reading data from the database to make decisions in your game.</p>
+<p><strong>updating the database as values change:</strong> as values change, storing them for fuure use (as your game dictates)</p>
+<p><strong>closing the database connection when it is not in use:</strong> this should be done with both a persistent connection and opening a connection as needed. Failure to close the connection can result in data-loss.</p>
+</blockquote>
+<h4 id="use-a-manager-class">Use a Manager class?</h4>
+<p>Using a singleton as a manager class might be a good option. This encapsulates all of the SQL functionality to a single place provided easy access to functions without a lot of mess. A singleton pattern helps provide a <strong>single</strong>(or global) instance of a class. You can read more about <a href="http://gameprogrammingpatterns.com/singleton.html" target="_blank"><strong>singleton patterns</strong></a>.</p>
+<p>A simple <strong>singleton</strong> may look something like this:</p>
+<p><strong>c++ header</strong>:</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span>  _SQLMANAGER_H_</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  _SQLMANAGER_H_</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+
+<span class="hljs-keyword">class</span> sqlite3;
+
+<span class="hljs-keyword">class</span> SQLManager
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">static</span> SQLManager* <span class="hljs-title">Instance</span><span class="hljs-params">()</span></span>;
+        <span class="hljs-keyword">virtual</span> ~SQLManager() {}
+
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initInstance</span><span class="hljs-params">()</span></span>;
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">connect</span><span class="hljs-params">()</span></span>;
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isDatabasePopulated</span><span class="hljs-params">()</span></span>;
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">createDatabaseContents</span><span class="hljs-params">()</span></span>;
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">createMainTable</span><span class="hljs-params">()</span></span>;
+
+        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">getIsDatabaseReady</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> _bDatabaseReady; };
+        <span class="hljs-function"><span class="hljs-keyword">inline</span> sqlite3*&amp; <span class="hljs-title">getDatabase</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> _pdb; };
+
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">executeSelectQueryReturnSingleInt</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; _sql)</span></span>;
+        <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getKeyByID</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; _key, <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; _value)</span></span>;
+
+        <span class="hljs-keyword">static</span> <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">getSQLToCheckCounts</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; _tableName)</span></span>;
+
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">updateKey</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; _key, <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span>&amp; _value)</span></span>;
+
+    <span class="hljs-keyword">private</span>:
+        SQLManager();
+        SQLManager(<span class="hljs-keyword">const</span> SQLManager&amp;);
+        SQLManager&amp; <span class="hljs-keyword">operator</span>= (<span class="hljs-keyword">const</span> SQLManager&amp;);
+        <span class="hljs-keyword">static</span> SQLManager* pinstance;
+
+        <span class="hljs-keyword">bool</span> _bDatabaseReady = <span class="hljs-literal">false</span>;
+        sqlite3* _pdb;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> _dbFile = <span class="hljs-string">&quot;MyDatabase.db3&quot;</span>;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> _dbName = <span class="hljs-string">&quot;MyDatabase&quot;</span>;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> _dbPath;
+        <span class="hljs-keyword">int</span> _dbVersion = <span class="hljs-number">1</span>; <span class="hljs-comment">// increment this when database structure changes</span>
+};
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// _SQLMANAGER_H_</span></span>
+</code></pre>
+<p><strong>c++ source</strong>:</p>
+<pre><code class="lang-cpp">
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;SQLManager.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;sqlite3.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;cocos2d.h&quot;</span></span>
+
+SQLManager* SQLManager::pinstance = <span class="hljs-number">0</span>;
+
+SQLManager::SQLManager() {}
+
+SQLManager* SQLManager::Instance()
+{
+    <span class="hljs-keyword">if</span> (pinstance == <span class="hljs-number">0</span>)
+    {
+        pinstance = <span class="hljs-keyword">new</span> SQLManager;
+        pinstance-&gt;initInstance();
+    }
+
+    <span class="hljs-keyword">return</span> pinstance;
+}
+
+<span class="hljs-keyword">void</span> SQLManager::initInstance()
+{
+    <span class="hljs-comment">// what do we need to do when this class is instantiated?</span>
+}
+
+<span class="hljs-keyword">bool</span> SQLManager::connect()
+{
+    <span class="hljs-comment">// connecting to SQLite</span>
+}
+
+<span class="hljs-keyword">bool</span> SQLManager::isDatabasePopulated()
+{
+    <span class="hljs-comment">// is our database already populated?</span>
+}
+
+<span class="hljs-keyword">bool</span> SQLManager::createDatabaseContents()
+{
+    <span class="hljs-comment">// creating the database contents</span>
+}
+
+<span class="hljs-keyword">bool</span> SQLManager::createMainTable()
+{
+    <span class="hljs-comment">// creating the main table, but you may need more tables...</span>
+}
+
+<span class="hljs-keyword">int</span> SQLManager::executeSelectQueryReturnSingleInt(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; _sql)
+{
+    <span class="hljs-comment">// returning an int as a result from a query</span>
+}
+
+<span class="hljs-keyword">int</span> SQLManager::getKeyByID(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; _key, <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; _value)
+{
+    <span class="hljs-comment">// obtaining a key</span>
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> SQLManager::getSQLToCheckCounts(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; _tableName)
+{
+    <span class="hljs-comment">// checking how many rows a table has</span>
+}
+
+<span class="hljs-keyword">void</span> SQLManager::updateKey(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; _key, <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span>&amp; _value)
+{
+    <span class="hljs-comment">// when we need to update data</span>
+}
+</code></pre>
+<p>This singleton class will continue to be used through the rest of this tutorial, adding to it as needed.
+There are arguments for why <strong>singleton</strong> patterns can be <a href="https://jorudolph.wordpress.com/2009/11/22/singleton-considerations/" target="_blank">bad</a></p>
+<h4 id="creating-a-database">Creating a database</h4>
+<p>To create a new database, it is best to see if an existing database already exists. If it does, it means your game has been played before on this device, no need to create a new one. Let&apos;s check for an existing database and if not create a new one using <code>SQLManager::initInstance()</code>, <code>SQLManager::connect()</code> and <code>SQLManager::isDatabasePopulated()</code>:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">void</span> SQLManager::initInstance()
+{
+    <span class="hljs-keyword">if</span> (connect())
+    {
+        <span class="hljs-keyword">if</span> (isDatabasePopulated())
+        {
+           <span class="hljs-comment">// the database was found and is populated.</span>
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            <span class="hljs-comment">// a new database was created, so we need to pupulate it.</span>
+        }
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-comment">// we failed to connect, handle this more gracefully for production!!!</span>
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;We cannot connect to database&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    }
+}
+
+<span class="hljs-keyword">bool</span> SQLManager::connect()
+{
+    <span class="hljs-keyword">bool</span> _bConnect = <span class="hljs-literal">false</span>;
+
+    _pdb = <span class="hljs-literal">NULL</span>;
+
+    _dbPath = cocos2d::FileUtils::getInstance()-&gt;getWritablePath() + _dbFile;
+
+    <span class="hljs-keyword">int</span> result = sqlite3_open(_dbPath.c_str(), &amp;_pdb);
+
+    <span class="hljs-keyword">if</span>(result == SQLITE_OK)
+    {
+        <span class="hljs-comment">//std::cout &lt;&lt; &quot;open database successfull!&quot; &lt;&lt; std::endl;</span>
+        _bConnect = <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-keyword">return</span> _bConnect;
+}
+
+<span class="hljs-keyword">bool</span> SQLManager::isDatabasePopulated()
+{
+    <span class="hljs-comment">// check to see if the database is populated, this means it already existed. </span>
+    <span class="hljs-comment">// If it isn&apos;t populated we need to populate it with initial values    </span>
+}
+</code></pre>
+<p>The above code tries to open the specified database, at the specified path. If the file is already present, it opens, ig the file is not present it is still opened, but it would be empty. We don&apos;t know which! One solution is to check for the existence of a database table that would be present if your game has already been played. We will go into detail about this next. Before we do, let&apos;s make sure that we also understand that calling <code>cocos2d::FileUtils::getInstance()-&gt;getWritablePath()</code> will ensure that the path we get back is indeed the writeable path on this specific device. As operating systems handle this differently and also have different locations it is important that this call be made and it&apos;s return value be used. It is not advised to try and make custom locations outside what the device vendor wishes to allow.</p>
+<h4 id="populating-a-database">Populating a database</h4>
+<p>As learned above, when trying to open a <strong>SQLite</strong> database, if it doesn&apos;t exist it will be created by the <strong>SQLite</strong> code. Therefore once you connect to the database,  you don&apos;t know if the database already has data for your game or if this was the first time it is being played and therefore has <code>zero</code> data in it. You need to make this decision before proceeding because if the database doesn&apos;t have the data your game needs, your game fails immediately with errors and the player may never play it again because they think it is a broken or poorly made game.  How might we go about doing this? Remember the unexplained call above to <code>SQLManager::isDatabasePopulated()</code>? Let&apos;s do the checking there and <strong>return true;</strong> if the database has previous data and <strong>return false;</strong> if it does not. If <strong>return false;</strong> then populating the database with default data is necessary. Consider this code which attepmpts to check for a table named <strong>Master</strong> to be present:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">bool</span> SQLManager::isDatabasePopulated()
+{
+    <span class="hljs-keyword">bool</span> _bPopulated = <span class="hljs-literal">false</span>;
+
+    sqlite3_stmt *statement;
+
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> _sql = <span class="hljs-string">&quot;SELECT count(*) FROM (SELECT * FROM sqlite_master UNION ALL SELECT * FROM sqlite_temp_master) WHERE type=&apos;table&apos; AND name=&apos;&quot;</span> +
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot;Master&quot;</span>) +
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot;&apos; ORDER BY name LIMIT 1;&quot;</span>);
+
+    <span class="hljs-comment">//std::cout &lt;&lt; &quot;sql: &quot; &lt;&lt; _sql &lt;&lt; std::endl;</span>
+
+    <span class="hljs-keyword">if</span>(sqlite3_prepare_v2(_pdb, _sql.c_str(), <span class="hljs-number">-1</span>, &amp;statement, <span class="hljs-number">0</span>) == SQLITE_OK)
+    {
+        <span class="hljs-keyword">int</span> cols = sqlite3_column_count(statement);
+        <span class="hljs-keyword">int</span> result = <span class="hljs-number">0</span>;
+
+        <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)
+        {
+            result = sqlite3_step(statement);
+
+            <span class="hljs-keyword">if</span>(result == SQLITE_ROW)
+            {
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> col = <span class="hljs-number">0</span>; col &lt; cols; col++)
+                {
+                    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> s = (<span class="hljs-keyword">char</span>*)sqlite3_column_text(statement, col);
+
+                    <span class="hljs-comment">//std::cout &lt;&lt; &quot;s: &quot; &lt;&lt; s &lt;&lt; std::endl;</span>
+
+                    <span class="hljs-keyword">int</span> result = <span class="hljs-built_in">std</span>::stoi(s);
+
+                    <span class="hljs-keyword">if</span>(result == <span class="hljs-number">1</span>) <span class="hljs-comment">// table exists, 0 if it doesn&apos;t exist</span>
+                    {
+                        <span class="hljs-comment">//std::cout &lt;&lt; &quot;We have AppMaster table&quot; &lt;&lt; std::endl;</span>
+                        _bPopulated = <span class="hljs-literal">true</span>;
+                    }
+                    <span class="hljs-keyword">else</span>
+                    {
+                        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;We dont have APPMaster table&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+                    }
+                }
+            }
+            <span class="hljs-keyword">else</span>
+            {
+                <span class="hljs-keyword">break</span>;
+            }
+        }
+
+        sqlite3_finalize(statement);
+    }
+
+    <span class="hljs-keyword">return</span> _bPopulated;
+}
+</code></pre>
+<p>If a table named <strong>Master</strong> exists, <strong>true</strong> will be returned and then we know we have a database that has been populated before this launch of the game. Meaning we don&apos;t need to populate it. We can continue on knowing our database is ready to read/write/update data.</p>
+<p>If a table named <strong>Master</strong> does not exist <strong>false</strong> is returned and this means we need to populate our database before using it. To do this we need to create tables with rows in them. It&apos;s hard to be specific here because each game requires unique data. However, the idea is to use the <em>SQL CREATE TABLE</em> command along with inserting a few rows:</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// a vector with what values to initially need in the Master table.</span>
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; AppDBMasterTableID = {<span class="hljs-string">&quot;HighScore&quot;</span>, <span class="hljs-string">&quot;HighTime&quot;</span>, 
+        <span class="hljs-string">&quot;CurrentScore&quot;</span>, <span class="hljs-string">&quot;CurrentTime&quot;</span>, <span class="hljs-string">&quot;CurrentVersion&quot;</span>};
+
+<span class="hljs-comment">//std::cout &lt;&lt; &quot;Creating DB Master Table&quot; &lt;&lt; std::endl;</span>
+
+_sql = <span class="hljs-string">&quot;create table &quot;</span> +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot;Master&quot;</span>) +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot; (_id TEXT PRIMARY KEY, _value INT);&quot;</span>);
+
+<span class="hljs-comment">//std::cout &lt;&lt; &quot;sql: &quot; &lt;&lt; _sql &lt;&lt; std::endl;</span>
+
+result = sqlite3_exec(_pdb, _sql.c_str(), <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);
+
+<span class="hljs-keyword">if</span>(result == SQLITE_OK)
+{
+    <span class="hljs-keyword">char</span> buffer[<span class="hljs-number">300</span>];
+
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; AppDBMasterTableValue = {<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1.0</span>};
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">unsigned</span> i = <span class="hljs-number">0</span>; i &lt; AppDBMasterTableID.size(); i++)
+    {
+        _sql = <span class="hljs-string">&quot;INSERT INTO &quot;</span> +
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot;Master&quot;</span>) +
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot; VALUES (&apos;%s&apos;, &apos;%i&apos;)&quot;</span>);
+
+        <span class="hljs-built_in">sprintf</span>(buffer, _sql.c_str(),
+                AppDBMasterTableID.at(i).c_str(),
+                AppDBMasterTableValue.at(i));
+
+        result = sqlite3_exec(_pdb, buffer, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);
+    }
+}
+</code></pre>
+<p>With this concept, next time the game starts a database will exist and have the default values that are needed. It wont be created every time the game is started. Any new data that is updated or inserted into the database will persist between launches!</p>
+<h4 id="querying-data-in-the-database">Querying data in the database</h4>
+<p>After you have the database starting when the game starts and doing a quick integrity check to make sure it has the minimum necessary daya you will need to query the database from time to time to get values to make decisions. This might mean checking to see if the player beat a previous high score or if a player has beat a particular boss. Querying the database is an easy and common operation using the <em>SQL SELLECT</em> statement. Example:</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">value</span> <span class="hljs-keyword">from</span> <span class="hljs-keyword">Master</span> <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">id</span>=<span class="hljs-string">&quot;high score&quot;</span>;
+</code></pre>
+<p><strong>SQLite</strong> is pretty flexible in getting back data and looping over it. Consider something like:</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> _sql = <span class="hljs-string">&quot;SELECT &quot;</span> +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(value) +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot; FROM &quot;</span>) +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot;Master&quot;</span>) +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot; WHERE _id=&apos;high score&apos; LIMIT 1;&quot;</span>);
+
+sqlite3_stmt* statement;
+
+<span class="hljs-keyword">if</span> (sqlite3_prepare_v2(Instance()-&gt;getDatabase(), _sql, <span class="hljs-number">-1</span>, &amp;statement, <span class="hljs-number">0</span>) == SQLITE_OK)
+{
+    <span class="hljs-keyword">int</span> cols = sqlite3_column_count(statement);
+    <span class="hljs-keyword">int</span> result = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)
+    {
+        result = sqlite3_step(statement);
+
+        <span class="hljs-keyword">if</span>(result == SQLITE_ROW)
+        {
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> col = <span class="hljs-number">0</span>; col &lt; cols; col++)
+            {
+                <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> s = (<span class="hljs-keyword">char</span>*)sqlite3_column_text(statement, col);
+
+                <span class="hljs-comment">//std::cout &lt;&lt; &quot;s: &quot; &lt;&lt; s &lt;&lt; std::endl;</span>
+
+                <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::stoi(s);
+            }
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+}
+
+<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
+</code></pre>
+<p>With this code the high score is returned as a string so that it can be used in a <code>Label</code> object. Note that since we are just selecting the <em>value</em> column we only iterate over just that column in the SQL table.</p>
+<h4 id="updating-data-in-the-database">Updating data in the database</h4>
+<p>Updating works just the same as selecting data but with a different SQL statement format. A <em>SQL UPDATE</em> statement will be used instead. Consider:</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> _sql = <span class="hljs-string">&quot;UPDATE &quot;</span> +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot;Master&quot;</span>) +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot; SET _value&quot;</span>) +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot;=&quot;</span>) +
+<span class="hljs-built_in">std</span>::to_string(<span class="hljs-number">10</span>) +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot; WHERE _id=&apos;high score&apos;;&quot;</span>);
+
+<span class="hljs-comment">//std::cout &lt;&lt; &quot;sql: &quot; &lt;&lt; _sql &lt;&lt; std::endl;</span>
+
+<span class="hljs-keyword">int</span> result = sqlite3_exec(Instance()-&gt;getDatabase(), _sql, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);
+
+<span class="hljs-keyword">if</span> (result == SQLITE_OK)
+{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; (<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot;update to Master: &quot;</span>) + <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(_key.c_str()) + <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot; successful&quot;</span>)) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-comment">// continue on....</span>
+}
+<span class="hljs-keyword">else</span>
+{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; (<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot;update to Master: &quot;</span>) + <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(_key.c_str()) + <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot; Failed&quot;</span>)) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-comment">// throw an error</span>
+}
+</code></pre>
+<p>In this example the <em>high score</em> is updated.</p>
+<h4 id="inserting-new-data-into-the-database">Inserting new data into the database</h4>
+<p>Inserting data is also easy and the format looks as familiar as the <em>SQL SELECT</em> and <em>SQL UPDATE</em> statements. Consider:</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> _sql = <span class="hljs-string">&quot;INSERT INTO &quot;</span> +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot;Master&quot;</span>) +
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot; VALUES (&apos;15&apos;)&quot;</span>);
+</code></pre>
+<h4 id="closing-the-database-connection">Closing the database connection</h4>
+<p>While it isn&apos;t totally necessary to close a <strong>SQLite</strong> database, it is a good idea to play it safe and do so. Database corruption is possible if you don&apos;t. Consider closing the database where it makes sense in your code, possible on game exit.</p>
+<pre><code class="lang-cpp">sqlite3_close();
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Tutorials">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../youre-on-camera/" class="navigation navigation-next " aria-label="Next page: You're On Camera">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Storing Game Data","level":"1.16.1","depth":2,"next":{"title":"You're On Camera","level":"1.16.2","depth":2,"path":"tutorials/youre-on-camera/index.md","ref":"tutorials/youre-on-camera/index.md","articles":[]},"previous":{"title":"Tutorials","level":"1.16","depth":1,"path":"tutorials/index.md","ref":"tutorials/index.md","articles":[{"title":"Storing Game Data","level":"1.16.1","depth":2,"path":"tutorials/storing-game-data/index.md","ref":"tutorials/storing-game-data/index.md","articles":[]},{"title":"You're On Camera","level":"1.16.2","depth":2,"path":"tutorials/youre-on-camera/index.md","ref":"tutorials/youre-on-camera/index.md","articles":[]},{"title":"Dr. Mario in Cocos Creator","level":"1.16.3","depth":2,"path":"tutorials/dr-mario-style-game.md","ref":"tutorials/dr-mario-style-game.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","github-issue-feedback-language-custom","search-title","anchorjs","toggle-chapters","sharing"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"search":{"maxIndexSize":1000000000},"lunr":{"maxIndexSize":1000000000},"fontsettings":{"theme":"white","family":"sans","size":2},"search-title":{},"highlight":{},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper"],"douban":false,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"github-issue-feedback-language-custom":{"repo":"cocos-creator/creator-docs","branch":"master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"products":[{"name":"API Reference","link":"https://docs.cocos2d-x.org/api-ref/index.html"},{"name":"Cocos Creator","links":[{"name":"Manual","link":"https://docs.cocos2d-x.org/creator/manual/"},{"name":"API","link":"https://docs.cocos2d-x.org/creator/api/"}]}],"version":[{"name":"3.x","links":[{"name":"3.x","link":"https://docs.cocos2d-x.org/cocos2d-x/v3/en"},{"name":"4.x","link":"https://docs.cocos2d-x.org/cocos2d-x/v4/en"}]}]},"language":"en","gitbook":"*"},"file":{"path":"tutorials/storing-game-data/index.md","mtime":"2021-03-30T02:21:09.864Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-30T02:49:05.393Z"},"basePath":"../..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github-issue-feedback-language-custom/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-title/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-title/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-anchorjs/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script type="text/javascript">
+    function toggleLanguage () {
+        var path = location.href;
+        // console.log(path);
+        if (path.indexOf('/zh') !== -1) {
+            path = path.replace(/\/zh[\/$\s]/i, '/en/');
+        } else if (path.indexOf('/en') !== -1) {
+            path = path.replace(/\/en[\/$\s]/i, '/zh/');
+        }
+        // console.log('after: ' + path);
+        location.assign(path);
+    }
+    </script>
+
+    </body>
+</html>
+

@@ -1,0 +1,2048 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Basic Actions · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-title/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="sequences.html" />
+    
+    
+    <link rel="prev" href="getting_started.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+    <nav role="navigation" class="autoshow">
+        <ul class="summary">
+        <li><a href="https://cocos2d-x.org" class="btn" target="_blank"><img src="//forum.cocos.com/images/logo.png" height="30" /></a></li>
+        <li><a href="#" class="btn" onclick="toggleLanguage()">中文</a></li>
+        
+        
+        <li class="version-link">
+            <a href="#" class="btn" style="color:#444"></i>Version: <span style="font-weight: bold; display: inline">3.x</span></a>
+            <ul class="hovershow">
+                
+                <li><a href="https://docs.cocos2d-x.org/cocos2d-x/v3/en" class="btn">Version: <span style="font-weight:bold; display: inline">3.x</span></a></li>
+                
+                <li><a href="https://docs.cocos2d-x.org/cocos2d-x/v4/en" class="btn">Version: <span style="font-weight:bold; display: inline">4.x</span></a></li>
+                
+            </ul>
+        </li>
+        
+        
+        
+        
+        <li><a href="https://docs.cocos2d-x.org/api-ref/index.html" class="btn"><i class="fa fa-book"></i>API Reference</a></li>
+        
+    
+        
+        <li>
+            <a href="#" class="btn"><i class="fa fa-book"></i>Cocos Creator</a>
+            <ul>
+                
+                <li><a href="https://docs.cocos2d-x.org/creator/manual/" class="btn">Manual</a></li>
+                
+                <li><a href="https://docs.cocos2d-x.org/creator/api/" class="btn">API</a></li>
+                
+            </ul>
+        </li>
+        
+    
+        </ul>
+    </nav>
+    
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../about/getting_started.html">
+            
+                <a href="../about/getting_started.html">
+            
+                    
+                    About Cocos2d-x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../about/why.html">
+            
+                <a href="../about/why.html">
+            
+                    
+                    Why Cocos2d-x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../about/learn.html">
+            
+                <a href="../about/learn.html">
+            
+                    
+                    How to learn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../about/help.html">
+            
+                <a href="../about/help.html">
+            
+                    
+                    Where to get help
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../about/how.html">
+            
+                <a href="../about/how.html">
+            
+                    
+                    How to contribute
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic_concepts/">
+            
+                <a href="../basic_concepts/">
+            
+                    
+                    Basic Cocos2d-x Concepts
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basic_concepts/getting_started.html">
+            
+                <a href="../basic_concepts/getting_started.html">
+            
+                    
+                    Main Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic_concepts/director.html">
+            
+                <a href="../basic_concepts/director.html">
+            
+                    
+                    Director
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../basic_concepts/scene.html">
+            
+                <a href="../basic_concepts/scene.html">
+            
+                    
+                    Scenes and the Scene graph
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../basic_concepts/sprites.html">
+            
+                <a href="../basic_concepts/sprites.html">
+            
+                    
+                    Sprites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../basic_concepts/actions.html">
+            
+                <a href="../basic_concepts/actions.html">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../basic_concepts/sequences.html">
+            
+                <a href="../basic_concepts/sequences.html">
+            
+                    
+                    Sequences and Spawns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../basic_concepts/parent_child.html">
+            
+                <a href="../basic_concepts/parent_child.html">
+            
+                    
+                    Parent Child Relationship
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../basic_concepts/logging.html">
+            
+                <a href="../basic_concepts/logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../sprites/">
+            
+                <a href="../sprites/">
+            
+                    
+                    Sprites
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../sprites/getting_started.html">
+            
+                <a href="../sprites/getting_started.html">
+            
+                    
+                    What are Sprites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../sprites/creating.html">
+            
+                <a href="../sprites/creating.html">
+            
+                    
+                    Creating Sprites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../sprites/spritesheets.html">
+            
+                <a href="../sprites/spritesheets.html">
+            
+                    
+                    Spritesheets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../sprites/spriteframe_cache.html">
+            
+                <a href="../sprites/spriteframe_cache.html">
+            
+                    
+                    SpriteFrame Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../sprites/manipulation.html">
+            
+                <a href="../sprites/manipulation.html">
+            
+                    
+                    Sprite Manipulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../sprites/polygon.html">
+            
+                <a href="../sprites/polygon.html">
+            
+                    
+                    Polygon Sprite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="getting_started.html">
+            
+                <a href="getting_started.html">
+            
+                    
+                    What are Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="basic.html">
+            
+                <a href="basic.html">
+            
+                    
+                    Basic Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="sequences.html">
+            
+                <a href="sequences.html">
+            
+                    
+                    Sequences
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="sequence_internals.html">
+            
+                <a href="sequence_internals.html">
+            
+                    
+                    Sequence Internals
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../scenes/">
+            
+                <a href="../scenes/">
+            
+                    
+                    Building and Transitioning Scenes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../scenes/getting_started.html">
+            
+                <a href="../scenes/getting_started.html">
+            
+                    
+                    What are Scenes?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../scenes/creating.html">
+            
+                <a href="../scenes/creating.html">
+            
+                    
+                    Creating Scenes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../scenes/transitioning.html">
+            
+                <a href="../scenes/transitioning.html">
+            
+                    
+                    Transitioning Scenes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ui_components/">
+            
+                <a href="../ui_components/">
+            
+                    
+                    UI Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../ui_components/getting_started.html">
+            
+                <a href="../ui_components/getting_started.html">
+            
+                    
+                    Widgets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../ui_components/labels.html">
+            
+                <a href="../ui_components/labels.html">
+            
+                    
+                    Label
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../ui_components/menus.html">
+            
+                <a href="../ui_components/menus.html">
+            
+                    
+                    Menu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../ui_components/buttons.html">
+            
+                <a href="../ui_components/buttons.html">
+            
+                    
+                    Buttons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../ui_components/checkboxes.html">
+            
+                <a href="../ui_components/checkboxes.html">
+            
+                    
+                    Checkbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../ui_components/loading_bar.html">
+            
+                <a href="../ui_components/loading_bar.html">
+            
+                    
+                    Loading Bar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../ui_components/sliders.html">
+            
+                <a href="../ui_components/sliders.html">
+            
+                    
+                    Slider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../ui_components/textfields.html">
+            
+                <a href="../ui_components/textfields.html">
+            
+                    
+                    TextField
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../other_node_types/">
+            
+                <a href="../other_node_types/">
+            
+                    
+                    Other Node Types
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../other_node_types/getting_started.html">
+            
+                <a href="../other_node_types/getting_started.html">
+            
+                    
+                    More than just a Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../other_node_types/tilemap.html">
+            
+                <a href="../other_node_types/tilemap.html">
+            
+                    
+                    TileMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../other_node_types/particles.html">
+            
+                <a href="../other_node_types/particles.html">
+            
+                    
+                    Particle System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../other_node_types/parallax.html">
+            
+                <a href="../other_node_types/parallax.html">
+            
+                    
+                    Parallax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../event_dispatcher/">
+            
+                <a href="../event_dispatcher/">
+            
+                    
+                    Event Dispatcher
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../event_dispatcher/getting_started.html">
+            
+                <a href="../event_dispatcher/getting_started.html">
+            
+                    
+                    What is the EventDispatch mechanism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../event_dispatcher/types.html">
+            
+                <a href="../event_dispatcher/types.html">
+            
+                    
+                    Types of event listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../event_dispatcher/priority.html">
+            
+                <a href="../event_dispatcher/priority.html">
+            
+                    
+                    Events Priority
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../event_dispatcher/touch.html">
+            
+                <a href="../event_dispatcher/touch.html">
+            
+                    
+                    Touch Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../event_dispatcher/keyboard.html">
+            
+                <a href="../event_dispatcher/keyboard.html">
+            
+                    
+                    Keyboard Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../event_dispatcher/accelerometer.html">
+            
+                <a href="../event_dispatcher/accelerometer.html">
+            
+                    
+                    Accelerometer Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../event_dispatcher/mouse.html">
+            
+                <a href="../event_dispatcher/mouse.html">
+            
+                    
+                    Mouse Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../event_dispatcher/custom.html">
+            
+                <a href="../event_dispatcher/custom.html">
+            
+                    
+                    Creating Custom Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../event_dispatcher/registering.html">
+            
+                <a href="../event_dispatcher/registering.html">
+            
+                    
+                    Registering Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../3d/">
+            
+                <a href="../3d/">
+            
+                    
+                    3D
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../3d/terminology.html">
+            
+                <a href="../3d/terminology.html">
+            
+                    
+                    Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../3d/sprite3d.html">
+            
+                <a href="../3d/sprite3d.html">
+            
+                    
+                    Sprite3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../3d/animation.html">
+            
+                <a href="../3d/animation.html">
+            
+                    
+                    Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../3d/camera.html">
+            
+                <a href="../3d/camera.html">
+            
+                    
+                    Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../3d/cubemap.html">
+            
+                <a href="../3d/cubemap.html">
+            
+                    
+                    Cubemap Texture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../3d/skybox.html">
+            
+                <a href="../3d/skybox.html">
+            
+                    
+                    Skybox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../3d/lighting.html">
+            
+                <a href="../3d/lighting.html">
+            
+                    
+                    Lighting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../3d/terrain.html">
+            
+                <a href="../3d/terrain.html">
+            
+                    
+                    Terrain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../3d/tools.html">
+            
+                <a href="../3d/tools.html">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../3d/advanced.html">
+            
+                <a href="../3d/advanced.html">
+            
+                    
+                    Advanced 3D Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../scripting/">
+            
+                <a href="../scripting/">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../scripting/script_component.html">
+            
+                <a href="../scripting/script_component.html">
+            
+                    
+                    Script component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../physics/">
+            
+                <a href="../physics/">
+            
+                    
+                    Physics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../physics/getting_started.html">
+            
+                <a href="../physics/getting_started.html">
+            
+                    
+                    Physics is scary!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../physics/concepts.html">
+            
+                <a href="../physics/concepts.html">
+            
+                    
+                    Terminology and concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../physics/collisions.html">
+            
+                <a href="../physics/collisions.html">
+            
+                    
+                    Collision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../physics/queries.html">
+            
+                <a href="../physics/queries.html">
+            
+                    
+                    Queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../physics/debugging.html">
+            
+                <a href="../physics/debugging.html">
+            
+                    
+                    Debugging/Disabling
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../audio/">
+            
+                <a href="../audio/">
+            
+                    
+                    Audio
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../audio/getting_started.html">
+            
+                <a href="../audio/getting_started.html">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../audio/playing.html">
+            
+                <a href="../audio/playing.html">
+            
+                    
+                    Playing Sound
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../audio/operations.html">
+            
+                <a href="../audio/operations.html">
+            
+                    
+                    Manipulating Sound
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../audio/advanced.html">
+            
+                <a href="../audio/advanced.html">
+            
+                    
+                    Advanced Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../audio/engines.html">
+            
+                <a href="../audio/engines.html">
+            
+                    
+                    Audio Engines Compared
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../advanced_topics/">
+            
+                <a href="../advanced_topics/">
+            
+                    
+                    Advanced Topics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../advanced_topics/filesystem.html">
+            
+                <a href="../advanced_topics/filesystem.html">
+            
+                    
+                    File System Access
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../advanced_topics/networking.html">
+            
+                <a href="../advanced_topics/networking.html">
+            
+                    
+                    Networking with HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../advanced_topics/oppo.html">
+            
+                <a href="../advanced_topics/oppo.html">
+            
+                    
+                    OPPO Optimizations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../advanced_topics/optimizing.html">
+            
+                <a href="../advanced_topics/optimizing.html">
+            
+                    
+                    Optimizing Graphics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../advanced_topics/shaders.html">
+            
+                <a href="../advanced_topics/shaders.html">
+            
+                    
+                    Shaders and Materials
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../advanced_topics/sqlite.html">
+            
+                <a href="../advanced_topics/sqlite.html">
+            
+                    
+                    SQLite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../installation/">
+            
+                <a href="../installation/">
+            
+                    
+                    Software Installations
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../installation/prerequisites.html">
+            
+                <a href="../installation/prerequisites.html">
+            
+                    
+                    Prerequisites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../installation/Android-Studio.html">
+            
+                <a href="../installation/Android-Studio.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.2.1" data-path="../installation/Android-Studio.html">
+            
+                <a href="../installation/Android-Studio.html">
+            
+                    
+                    Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2.2" data-path="../installation/Android-terminal.html">
+            
+                <a href="../installation/Android-terminal.html">
+            
+                    
+                    Command-line (Deprecated)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2.3" data-path="../installation/Android-VisualStudio.html">
+            
+                <a href="../installation/Android-VisualStudio.html">
+            
+                    
+                    Visual Studio (Deprecated)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2.4" data-path="../installation/Android-Eclipse.html">
+            
+                <a href="../installation/Android-Eclipse.html">
+            
+                    
+                    Eclipse (Deprecated)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../installation/iOS.html">
+            
+                <a href="../installation/iOS.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../installation/OSX.html">
+            
+                <a href="../installation/OSX.html">
+            
+                    
+                    macOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../installation/Linux.html">
+            
+                <a href="../installation/Linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" data-path="../installation/Tizen.html">
+            
+                <a href="../installation/Tizen.html">
+            
+                    
+                    Tizen (Deprecated)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" data-path="../installation/Windows.html">
+            
+                <a href="../installation/Windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.7.1" data-path="../installation/Windows.html">
+            
+                <a href="../installation/Windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7.2" data-path="../installation/Windows-Phone.html">
+            
+                <a href="../installation/Windows-Phone.html">
+            
+                    
+                    Windows Phone (Deprecated)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" data-path="../installation/CMake-Guide.html">
+            
+                <a href="../installation/CMake-Guide.html">
+            
+                    
+                    CMake Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../editors_and_tools/">
+            
+                <a href="../editors_and_tools/">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../editors_and_tools/cocosCLTool.html">
+            
+                <a href="../editors_and_tools/cocosCLTool.html">
+            
+                    
+                    Command-Line tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../editors_and_tools/creator_to_cocos2dx.html">
+            
+                <a href="../editors_and_tools/creator_to_cocos2dx.html">
+            
+                    
+                    Creator to Cocos2d-x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../tutorials/">
+            
+                <a href="../tutorials/">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../tutorials/storing-game-data/">
+            
+                <a href="../tutorials/storing-game-data/">
+            
+                    
+                    Storing Game Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../tutorials/youre-on-camera/">
+            
+                <a href="../tutorials/youre-on-camera/">
+            
+                    
+                    You're On Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../tutorials/dr-mario-style-game.md">
+            
+                <span>
+            
+                    
+                    Dr. Mario in Cocos Creator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ of Solutions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../faq/android.html">
+            
+                <a href="../faq/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../faq/cmake.html">
+            
+                <a href="../faq/cmake.html">
+            
+                    
+                    CMake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" data-path="../faq/linux.html">
+            
+                <a href="../faq/linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4" data-path="../faq/macos.html">
+            
+                <a href="../faq/macos.html">
+            
+                    
+                    MacOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5" data-path="../faq/windows.html">
+            
+                <a href="../faq/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="cocos-navbar navbar-collapse" id="navbar" role="navigation">
+    <ul class="nav navbar-nav">
+        <li><a href="https://cocos2d-x.org" class="btn" target="_blank"><img src="//forum.cocos.com/images/logo.png" height="30" /></a></li>
+        <li><a href="#" class="btn autohide" onclick="toggleLanguage()">中文</a></li>
+
+    
+    <li><a href="https://docs.cocos2d-x.org/api-ref/index.html" class="btn autohide"><i class="fa fa-book"></i>API Reference</a></li>
+    
+
+    
+    <li>
+        <a href="#" class="btn autohide"><i class="fa fa-book"></i>Cocos Creator</a>
+        <ul class="hovershow">
+            
+            <li><a href="https://docs.cocos2d-x.org/creator/manual/" class="btn">Manual</a></li>
+            
+            <li><a href="https://docs.cocos2d-x.org/creator/api/" class="btn">API</a></li>
+            
+        </ul>
+    </li>
+    
+
+    </ul>
+</div>
+<div class="book-header" role="navigation">
+    
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Basic Actions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="basic-actions-and-how-to-run-them">Basic Actions and how to run them</h2>
+<p>Basic actions are usually a singular action, thus accomplishing a single objective. Let&apos;s take a look at a few examples:</p>
+<h3 id="move">Move</h3>
+<p><strong>Move</strong> a <code>Node</code> over a set period of time.</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> mySprite = Sprite::create(<span class="hljs-string">&quot;mysprite.png&quot;</span>);
+
+<span class="hljs-comment">// Move a sprite to a specific location over 2 seconds.</span>
+<span class="hljs-keyword">auto</span> moveTo = MoveTo::create(<span class="hljs-number">2</span>, Vec2(<span class="hljs-number">50</span>, <span class="hljs-number">0</span>));
+
+mySprite-&gt;runAction(moveTo);
+
+<span class="hljs-comment">// Move a sprite 50 pixels to the right, and 0 pixels to the top over 2 seconds.</span>
+<span class="hljs-keyword">auto</span> moveBy = MoveBy::create(<span class="hljs-number">2</span>, Vec2(<span class="hljs-number">50</span>, <span class="hljs-number">0</span>));
+
+mySprite-&gt;runAction(moveBy);
+</code></pre>
+<p><img src="actions-img/i1.png" alt=""></p>
+<h3 id="rotate">Rotate</h3>
+<p><strong>Rotate</strong> a <code>Node</code> clockwise over 2 seconds.</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> mySprite = Sprite::create(<span class="hljs-string">&quot;mysprite.png&quot;</span>);
+
+<span class="hljs-comment">// Rotates a Node to the specific angle over 2 seconds</span>
+<span class="hljs-keyword">auto</span> rotateTo = RotateTo::create(<span class="hljs-number">2.0f</span>, <span class="hljs-number">40.0f</span>);
+mySprite-&gt;runAction(rotateTo);
+
+<span class="hljs-comment">// Rotates a Node clockwise by 40 degree over 2 seconds</span>
+<span class="hljs-keyword">auto</span> rotateBy = RotateBy::create(<span class="hljs-number">2.0f</span>, <span class="hljs-number">40.0f</span>);
+mySprite-&gt;runAction(rotateBy);
+</code></pre>
+<p><img src="actions-img/i3.png" alt=""></p>
+<h3 id="scale">Scale</h3>
+<p><strong>Scale</strong> a <code>Node</code> by 10 over 2 seconds.</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> mySprite = Sprite::create(<span class="hljs-string">&quot;mysprite.png&quot;</span>);
+
+<span class="hljs-comment">// Scale uniformly by 3x over 2 seconds</span>
+<span class="hljs-keyword">auto</span> scaleBy = ScaleBy::create(<span class="hljs-number">2.0f</span>, <span class="hljs-number">3.0f</span>);
+mySprite-&gt;runAction(scaleBy);
+
+<span class="hljs-comment">// Scale X by 5 and Y by 3x over 2 seconds</span>
+<span class="hljs-keyword">auto</span> scaleBy = ScaleBy::create(<span class="hljs-number">2.0f</span>, <span class="hljs-number">3.0f</span>, <span class="hljs-number">3.0f</span>);
+mySprite-&gt;runAction(scaleBy);
+
+<span class="hljs-comment">// Scale to uniformly to 3x over 2 seconds</span>
+<span class="hljs-keyword">auto</span> scaleTo = ScaleTo::create(<span class="hljs-number">2.0f</span>, <span class="hljs-number">3.0f</span>);
+mySprite-&gt;runAction(scaleTo);
+
+<span class="hljs-comment">// Scale X to 5 and Y to 3x over 2 seconds</span>
+<span class="hljs-keyword">auto</span> scaleTo = ScaleTo::create(<span class="hljs-number">2.0f</span>, <span class="hljs-number">3.0f</span>, <span class="hljs-number">3.0f</span>);
+mySprite-&gt;runAction(scaleTo);
+</code></pre>
+<p><img src="actions-img/i4.png" alt=""></p>
+<h3 id="fade-inout">Fade In/Out</h3>
+<p><strong>Fade</strong> a <code>Node</code>.</p>
+<p>It modifies the opacity from 0 to 255. The <em>reverse</em> of this action is <code>FadeOut</code></p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> mySprite = Sprite::create(<span class="hljs-string">&quot;mysprite.png&quot;</span>);
+
+<span class="hljs-comment">// fades in the sprite in 1 seconds</span>
+<span class="hljs-keyword">auto</span> fadeIn = FadeIn::create(<span class="hljs-number">1.0f</span>);
+mySprite-&gt;runAction(fadeIn);
+
+<span class="hljs-comment">// fades out the sprite in 2 seconds</span>
+<span class="hljs-keyword">auto</span> fadeOut = FadeOut::create(<span class="hljs-number">2.0f</span>);
+mySprite-&gt;runAction(fadeOut);
+</code></pre>
+<p><img src="actions-img/i2.png" alt=""></p>
+<h3 id="tint">Tint</h3>
+<p><code>Tint</code> a <code>Node</code> that implements the <code>NodeRGB</code> protocol from current the tint to a custom tint.</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> mySprite = Sprite::create(<span class="hljs-string">&quot;mysprite.png&quot;</span>);
+
+<span class="hljs-comment">// Tints a node to the specified RGB values</span>
+<span class="hljs-keyword">auto</span> tintTo = TintTo::create(<span class="hljs-number">2.0f</span>, <span class="hljs-number">120.0f</span>, <span class="hljs-number">232.0f</span>, <span class="hljs-number">254.0f</span>);
+mySprite-&gt;runAction(tintTo);
+
+<span class="hljs-comment">// Tints a node BY the delta of the specified RGB values.</span>
+<span class="hljs-keyword">auto</span> tintBy = TintBy::create(<span class="hljs-number">2.0f</span>, <span class="hljs-number">120.0f</span>, <span class="hljs-number">232.0f</span>, <span class="hljs-number">254.0f</span>);
+mySprite-&gt;runAction(tintBy);
+</code></pre>
+<p><img src="actions-img/i5.png" alt=""></p>
+<h3 id="animate">Animate</h3>
+<p>With <code>Animate</code> it is possible to do simple <strong>flipbook</strong> animation with your <code>Sprite</code> objects. This is simply replacing the <strong>display frame</strong> at set intervals for the duration of the animation. Let&apos;s consider this example:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> mySprite = Sprite::create(<span class="hljs-string">&quot;mysprite.png&quot;</span>);
+
+<span class="hljs-comment">// now lets animate the sprite we moved</span>
+Vector&lt;SpriteFrame*&gt; animFrames;
+animFrames.reserve(<span class="hljs-number">12</span>);
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Front1.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Front2.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Front3.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Left1.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Left2.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Left3.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Back1.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Back2.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Back3.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Right1.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Right2.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+animFrames.pushBack(SpriteFrame::create(<span class="hljs-string">&quot;Blue_Right3.png&quot;</span>, Rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">65</span>,<span class="hljs-number">81</span>)));
+
+<span class="hljs-comment">// create the animation out of the frames</span>
+Animation* animation = Animation::createWithSpriteFrames(animFrames, <span class="hljs-number">0.1f</span>);
+Animate* animate = Animate::create(animation);
+
+<span class="hljs-comment">// run it and repeat it forever</span>
+mySprite-&gt;runAction(RepeatForever::create(animate));
+</code></pre>
+<p>It&apos;s hard to show an animation in text, so please run the example <strong>Programmer
+Guide Sample</strong> code to see this in action!</p>
+<h3 id="easing">Easing</h3>
+<p><strong>Easing</strong> is animating with a specified acceleration to make the animations smooth.
+A few things to keep in mind is that regardless of speed, ease actions always
+start and finish at the same time. <strong>Ease</strong> actions are a good way to <strong>fake</strong> physics
+in your game! Perhaps you want a few simulated physics effects but don&apos;t want the
+overhead and complexity of adding it all for a few very basic actions. Another
+good example is to animate menus and buttons.</p>
+<p>Here are common easing functions displayed over a graph:</p>
+<p><img src="actions-img/easing-functions.png" alt=""></p>
+<p>Cocos2d-x supports most of the easing function in the above graph. They are also
+simple to implement. Lets look at a specific use case. Lets drop a <code>Sprite</code> object
+from the top of the screen and make it bounce.</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// create a sprite</span>
+<span class="hljs-keyword">auto</span> mySprite = Sprite::create(<span class="hljs-string">&quot;mysprite.png&quot;</span>);
+
+<span class="hljs-comment">// create a MoveBy Action to where we want the sprite to drop from.</span>
+<span class="hljs-keyword">auto</span> move = MoveBy::create(<span class="hljs-number">2</span>, Vec2(<span class="hljs-number">200</span>, dirs-&gt;getVisibleSize().height -
+ newSprite2-&gt;getContentSize().height));
+
+<span class="hljs-comment">// create a BounceIn Ease Action</span>
+<span class="hljs-keyword">auto</span> move_ease_in = EaseBounceIn::create(move-&gt;clone());
+<span class="hljs-keyword">auto</span> move_ease_in_back = move_ease_in-&gt;reverse();
+
+<span class="hljs-comment">// create a delay that is run in between sequence events</span>
+<span class="hljs-keyword">auto</span> delay = DelayTime::create(<span class="hljs-number">0.25f</span>);
+
+<span class="hljs-comment">// create the sequence of actions, in the order we want to run them</span>
+<span class="hljs-keyword">auto</span> seq1 = Sequence::create(move_ease_in, delay, move_ease_in_back,
+    delay-&gt;clone(), <span class="hljs-literal">nullptr</span>);
+
+<span class="hljs-comment">// run the sequence and repeat forever.</span>
+mySprite-&gt;runAction(RepeatForever::create(seq1));
+</code></pre>
+<p>Run the example <strong>Programmer Guide Sample</strong> code to see this in action!</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="getting_started.html" class="navigation navigation-prev " aria-label="Previous page: What are Actions">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="sequences.html" class="navigation navigation-next " aria-label="Next page: Sequences">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Basic Actions","level":"1.4.2","depth":2,"next":{"title":"Sequences","level":"1.4.3","depth":2,"path":"actions/sequences.md","ref":"actions/sequences.md","articles":[]},"previous":{"title":"What are Actions","level":"1.4.1","depth":2,"path":"actions/getting_started.md","ref":"actions/getting_started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","github-issue-feedback-language-custom","search-title","anchorjs","toggle-chapters","sharing"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"search":{"maxIndexSize":1000000000},"lunr":{"maxIndexSize":1000000000},"fontsettings":{"theme":"white","family":"sans","size":2},"search-title":{},"highlight":{},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper"],"douban":false,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"github-issue-feedback-language-custom":{"repo":"cocos-creator/creator-docs","branch":"master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"products":[{"name":"API Reference","link":"https://docs.cocos2d-x.org/api-ref/index.html"},{"name":"Cocos Creator","links":[{"name":"Manual","link":"https://docs.cocos2d-x.org/creator/manual/"},{"name":"API","link":"https://docs.cocos2d-x.org/creator/api/"}]}],"version":[{"name":"3.x","links":[{"name":"3.x","link":"https://docs.cocos2d-x.org/cocos2d-x/v3/en"},{"name":"4.x","link":"https://docs.cocos2d-x.org/cocos2d-x/v4/en"}]}]},"language":"en","gitbook":"*"},"file":{"path":"actions/basic.md","mtime":"2021-03-30T02:21:09.661Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-30T02:49:05.393Z"},"basePath":"..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-issue-feedback-language-custom/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-title/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-title/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script type="text/javascript">
+    function toggleLanguage () {
+        var path = location.href;
+        // console.log(path);
+        if (path.indexOf('/zh') !== -1) {
+            path = path.replace(/\/zh[\/$\s]/i, '/en/');
+        } else if (path.indexOf('/en') !== -1) {
+            path = path.replace(/\/en[\/$\s]/i, '/zh/');
+        }
+        // console.log('after: ' + path);
+        location.assign(path);
+    }
+    </script>
+
+    </body>
+</html>
+
