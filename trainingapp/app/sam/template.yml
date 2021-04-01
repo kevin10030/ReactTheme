@@ -1,0 +1,684 @@
+# This is the SAM template that represents the architecture of your serverless application
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: >-
+  trainingapp
+
+Transform:
+- AWS::Serverless-2016-10-31
+
+Globals:
+
+  Function:
+    Runtime: nodejs12.x
+    MemorySize: 128
+    Timeout: 100
+
+  HttpApi:
+    CorsConfiguration:
+      AllowHeaders:
+        - "*"
+      AllowMethods:
+        - "*"
+      AllowOrigins:
+        - "*"
+      ExposeHeaders:
+        - "*"
+
+Resources:
+
+  CognitoUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: TrainingAppUserPool
+      UsernameAttributes:
+        - email
+
+  AppUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: AppUserPool
+      AutoVerifiedAttributes:
+        - email
+      UsernameAttributes:
+        - email
+
+  AppUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      UserPoolId: !Ref AppUserPool
+      ClientName: AppUserPoolClient
+      GenerateSecret: false
+
+  CloudFrontOriginAccessIdentity:
+    Type: 'AWS::CloudFront::CloudFrontOriginAccessIdentity'
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: 'TrainingApp SAM Website'
+
+  WebsiteCloudfrontDistribution:
+    Type: "AWS::CloudFront::Distribution"
+    Properties:
+      DistributionConfig:
+        Aliases:
+            - trainingapp.godataplush.com
+        Comment: "Cloudfront Distribution for TrainingApp"
+        ViewerCertificate:
+          AcmCertificateArn: arn:aws:acm:us-east-1:234257617375:certificate/3ee4d34e-9e98-4293-9e51-8500b2d61da2
+          MinimumProtocolVersion: TLSv1.1_2016
+          SslSupportMethod: sni-only
+        DefaultRootObject: "index.html"
+        Enabled: true
+        HttpVersion: http2
+        Origins:
+          - Id: s3-website
+            DomainName: !GetAtt TrainingAppBucket.DomainName
+            S3OriginConfig:
+              OriginAccessIdentity:
+                Fn::Sub: 'origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}'
+        DefaultCacheBehavior:
+          TargetOriginId: s3-website
+          ForwardedValues:
+            QueryString: false
+          ViewerProtocolPolicy: redirect-to-https
+          Compress: 'true'
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+        CustomErrorResponses:
+          - ErrorCode: '403'
+            ResponsePagePath: "/index.html"
+            ResponseCode: '200'
+            ErrorCachingMinTTL: '30'
+          - ErrorCode: '404'
+            ResponsePagePath: "/index.html"
+            ResponseCode: '200'
+            ErrorCachingMinTTL: '30'
+
+  TrainingAppBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: trainingapp.godataplush.com
+
+  S3BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref TrainingAppBucket
+      PolicyDocument:
+      # Restricting access to cloudfront only.
+        Statement:
+          -
+            Effect: Allow
+            Action: 's3:GetObject'
+            Resource:
+              - !Sub "arn:aws:s3:::${TrainingAppBucket}/*"
+            Principal:
+              AWS: !Sub "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${CloudFrontOriginAccessIdentity}"
+
+  CourseThumbnailBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: course-thumbnail
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders:
+            - "*"
+            AllowedMethods:
+              - GET
+              - PUT
+              - HEAD
+            AllowedOrigins:
+              - "*"
+
+  AssetBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref CourseThumbnailBucket
+      PolicyDocument:
+        Id: PublicReadPolicy
+        Version: 2012-10-17
+        Statement:
+          - Sid: PublicReadForGetBucketObjects
+            Effect: Allow
+            Principal: '*'
+            Action: 's3:GetObject'
+            Resource: !Sub arn:aws:s3:::${CourseThumbnailBucket}/*
+
+  TrainingAppHttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: api
+
+  PostCategoryFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/category/postCategory.handler
+        Description: This Lambda Function Saves a Category Record in DynamoDB.
+        Events:
+          PostCategory:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: POST
+              Path: /v1/admin/category/create
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetCategoriesFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/category/getCategories.handler
+        Description: This Lambda Function Return List of Categories from DynamoDB.
+        Events:
+          GetCategories:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/category/list
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  DeleteCategoryFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/category/deleteCategory.handler
+        Description: This Lambda Function Deletes Category Record from DynamoDB.
+        Events:
+          DeleteCategory:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: DELETE
+              Path: /v1/admin/category/delete
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  PostCourseFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/course/postCourse.handler
+        Description: This Lambda Function Saves a Course Record in DynamoDB.
+        Events:
+          PostCourse:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: POST
+              Path: /v1/admin/course/create
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetCoursesFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/course/getCourses.handler
+        Description: This Lambda Function Return List of Courses from DynamoDB.
+        Events:
+          GetCourses:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/course/list
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  DeleteCourseFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/course/deleteCourse.handler
+        Description: This Lambda Function Deletes Course Record from DynamoDB.
+        Events:
+          DeleteCourse:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: DELETE
+              Path: /v1/admin/course/delete
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetCourseFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/course/getCourse.handler
+        Description: This Lambda Function Return Course details.
+        Events:
+          GetCourse:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/course/{courseid}/details
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetCategoryFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/category/getCategory.handler
+        Description: This Lambda Function Return Category details.
+        Events:
+          GetCategory:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/category/{categoryid}/details
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetCourseByCategoryFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/course/getCoursesByCategory.handler
+        Description: This Lambda Function Return Courses By Category.
+        Events:
+          GetCourseByCategory:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: POST
+              Path: /v1/admin/course/category/list
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+# Sections
+  PostSectionFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/section/postSection.handler
+        Description: This Lambda Function Saves a Section Record in DynamoDB.
+        Events:
+          PostSection:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: POST
+              Path: /v1/admin/section/create
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetSectionsFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/section/getSections.handler
+        Description: This Lambda Function Return List of Sections from DynamoDB.
+        Events:
+          GetSections:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/section/list
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  DeleteSectionFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/section/deleteSection.handler
+        Description: This Lambda Function Deletes Section Record from DynamoDB.
+        Events:
+          DeleteSection:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: DELETE
+              Path: /v1/admin/section/delete
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetSectionFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/section/getSection.handler
+        Description: This Lambda Function Return Section details.
+        Events:
+          GetSection:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/section/{sectionid}/details
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+# Topics
+  PostTopicFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/topic/postTopic.handler
+        Description: This Lambda Function Saves a Topic Record in DynamoDB.
+        Events:
+          PostTopic:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: POST
+              Path: /v1/admin/topic/create
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetTopicsFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/topic/getTopics.handler
+        Description: This Lambda Function Return List of Topics from DynamoDB.
+        Events:
+          GetTopics:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/topic/list
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  DeleteTopicFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/topic/deleteTopic.handler
+        Description: This Lambda Function Deletes Topic Record from DynamoDB.
+        Events:
+          DeleteTopic:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: DELETE
+              Path: /v1/admin/topic/delete
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetTopicFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/topic/getTopic.handler
+        Description: This Lambda Function Return Topic details.
+        Events:
+          GetTopic:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/topic/{topicid}/details
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+# Users
+
+  PostUserFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/user/postUser.handler
+        Description: This Lambda Function Saves a User Record in DynamoDB.
+        Events:
+          PostUser:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: POST
+              Path: /v1/admin/user/create
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetUserFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/user/getUser.handler
+        Description: This Lambda Function Return User from DynamoDB.
+        Events:
+          GetUser:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/user/details
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetUsersFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/user/getUsers.handler
+        Description: This Lambda Function Return All List of Users from DynamoDB.
+        Events:
+          GetUsers:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/user/list
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+# Payments & refunds
+  PostPaymentFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/payment/postPayment.handler
+        Description: This Lambda Function Saves a Payment Record in DynamoDB.
+        Events:
+          PostPayment:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: POST
+              Path: /v1/user/payment/create
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  PostRefundFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/payment/postRefund.handler
+        Description: This Lambda Function Saves a Refund Record in DynamoDB.
+        Events:
+          PostRefund:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: POST
+              Path: /v1/admin/refund/create
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetRefundsFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/payment/getRefunds.handler
+        Description: This Lambda Function Return All List of Refunds from DynamoDB.
+        Events:
+          GetRefunds:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/refund/list
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetPaymentsAllFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/payment/getAllPayments.handler
+        Description: This Lambda Function Return All List of Payments from DynamoDB.
+        Events:
+          GetPaymentsAll:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/payment/list
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetPaymentsFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/payment/getPayments.handler
+        Description: This Lambda Function Return Un Refunded List of Payments from DynamoDB.
+        Events:
+          GetPayments:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/payment/list/unrefund
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+# Orders
+  PostOrderFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/order/postOrder.handler
+        Description: This Lambda Function Saves a Order Record in DynamoDB.
+        Events:
+          PostOrder:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: POST
+              Path: /v1/user/order/create
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetOrdersFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/order/getOrders.handler
+        Description: This Lambda Function Return List of Orders from DynamoDB.
+        Events:
+          GetOrders:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/order/list
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetOrderFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/order/getOrder.handler
+        Description: This Lambda Function Return Order details.
+        Events:
+          GetOrder:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/order/{orderid}/details
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetOrderItemsFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/order/getOrderItems.handler
+        Description: This Lambda Function Return List of OrderItems from DynamoDB.
+        Events:
+          GetOrderItems:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/orderitem/list
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  GetOrderItemFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/order/getOrderItem.handler
+        Description: This Lambda Function Return OrderItem details.
+        Events:
+          GetOrderItem:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/orderitem/{orderid}/details
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  PostMessageFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/message/postMessage.handler
+        Description: This Lambda Function Saves and Send Contact Message.
+        Events:
+          PostMessage:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: POST
+              Path: /v1/user/message/create
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+          - AmazonSESFullAccess
+
+  GetMessagesFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/message/getMessages.handler
+        Description: This Lambda Function Return List of Messages from DynamoDB.
+        Events:
+          GetMessages:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: GET
+              Path: /v1/admin/message/list
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
+
+  DeleteMessageFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: src/message/deleteMessage.handler
+        Description: This Lambda Function Deletes Message Record from DynamoDB.
+        Events:
+          DeleteMessage:
+            Type: HttpApi
+            Properties:
+              ApiId: !Ref TrainingAppHttpApi
+              Method: DELETE
+              Path: /v1/admin/message/delete
+        Policies:
+          - AmazonDynamoDBFullAccess
+          - CloudWatchFullAccess
