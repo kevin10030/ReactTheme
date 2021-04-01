@@ -1,0 +1,58 @@
+Please install git first.
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+Please reference "Installing on Windows"
+You can download git for windows on https://git-scm.com/download/win 
+If you already installed git before, please ignore installing git
+
+1. Download code
+Please try this instruction on command prompt of your project folder
+For example:  C:\SourceCode
+git clone https://github.com/arun2808/trainingapp.git
+
+once above instruction is done, you can find source code on C:\SourceCode\trainingapp 
+
+2. Config aws
+- Install AWS CLI tool
+https://awscli.amazonaws.com/AWSCLIV2-2.0.30.msi
+please install AWS CLI tool from above url
+Please reference this url: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+
+- Run 'aws configure' command for configuration using your AWS keys
+Access key ID - AKIATNCWXSHPTNNKT7DK
+Secret access key - RDIpQWofmG3AcI/Jt5DnLehfnFfefKy0g3u5eZAg
+
+- Install SAM CLI tool
+Please reference this url: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-windows.html
+On this url, please check "Step 4: Install the AWS SAM CLI"
+There is AWS SAM CLI tool url.
+
+
+-------------------- Deployment ---------------------------------
+Once 1,2 is done, then you can deploy web page or backend anytime.
+
+3. Front-End Deployment:
+- Execute below command from react project folder '/web/'
+For example:  C:\SourceCode\trainingapp\Web
+'npm install'
+After above instruction is done, please execute below.
+'npm run build && aws s3 sync build/ s3://trainingapp.godataplush.com'
+
+4. Scratch Deployment
+- Please create new s3 bucket and set subdomain as https://scratch.trainingapp.godataplush.com
+- Execute below command from react project folder '/scratch-gui/'
+For example:  C:\SourceCode\trainingapp\scratch-gui
+'npm install'
+After above instruction is done, please execute below.
+'npm run build && aws s3 sync build/ s3://scratch.trainingapp.godataplush.com'
+
+
+5. Back-End Deployment:
+- Execute below commands one after another from sam project folder '/app/sam/'
+For example:  C:\SourceCode\trainingapp\app\sam
+'sam build'
+'sam deploy'
+
+----------------------------------------------------------------------------
+1,2 need to be done only one time.
+And then please deploy for 3.Front-End and 4.Scratch. 
+and please don't deploy for 5.Back-End because it's already deployed.
